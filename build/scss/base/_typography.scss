@@ -1,0 +1,188 @@
+@use "../abstracts" as *;
+//body - scope to .ccm-page instead for c5
+.ccm-page {
+    color: #333;
+    font-family: $ff-sans;
+    font-weight: $fw-400;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+    min-height: 0.01vw;
+    line-height: 1.4;
+  
+    //:is(h1, h2, h3, h4, .h1, .h2, .h3, .h4)
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5 {
+      font-family: $ff-sans;
+      line-height: calc(2px + 2ex + 2px);
+      //margin-block-end: 0.65em;
+      overflow-wrap: break-word;
+      hyphens: auto;
+      font-weight: $fw-400;
+      //text-transform: uppercase;
+      //font-stretch: 100%; // VARIABLE FONTS
+      //color: var(--clr-neutral-800);
+    }
+    h1, .h1 {
+      font-size: 2.44140625rem;
+      font-size: clamp(1.6357421875rem, 4.8056640625vw + 1rem, 2.44140625rem);
+      min-height: 0.01vw;
+    }
+    h2, .h2 {
+      font-size: 1.953125rem;
+      font-size: clamp(1.30859375rem, 4.64453125vw + 1rem, 1.953125rem);
+      min-height: 0.01vw;
+    }
+    h3, .h3 {
+      font-size: 1.5625rem;
+      font-size: clamp(1.046875rem, 4.515625vw + 1rem, 1.5625rem);
+      min-height: 0.01vw;
+    }
+    h4, .h4 {
+      font-size: 1.25rem;
+      font-size: clamp(1rem, 4.25vw + 1rem, 1.25rem);
+      min-height: 0.01vw;
+    }
+    h5, .h5 {
+      // same size as text!
+      font-size: 1rem;
+      font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+      min-height: 0.01vw;
+    }
+  
+    //p {}
+  
+    //ol, ul {}
+    //ol {}
+    //ul {}
+    //li {}
+    //ol ol, ol ul, ul ul, ul ol {}
+    //li li {}
+  
+    //pre {}
+    //pre code {}
+    //pre samp {}
+  
+    //blockquote {}
+  
+    //figure {}
+    //figcaption {}
+  
+    hr {
+      margin-block: 2rem;
+      border: none;
+      border-top: solid 1px #999;
+      height: 0;
+      padding: 0 !important;
+    }
+  
+    //dl {}
+    //dt {}
+    //dd {}
+  
+    a {
+      //color: var(--clr, var(--clr-primary-400));
+      color: inherit;
+      text-decoration: none;
+      //&:visited {}
+      &:hover,
+      &:focus {
+        //color: var(--clr-primary-400);
+        //text-decoration: none;
+      }
+      //&:active {}
+    }
+  
+    strong,
+    b,
+    .text-strong {
+      //--font-weight: 500;
+      //font-weight: normal;
+      font-weight: $fw-700;
+    }
+  
+    em,
+    i,
+    text-italic {
+      font-family: $ff-sans;
+    }
+  
+    //q {}
+    //cite {}
+  
+    //s {}
+  
+    //mark {}
+  
+    .text-large,
+    .text-lead {
+      font-size: 1.1em;
+      color: #333;
+    }
+    small,
+    .text-small {
+      //font-size: var(--fs-300);
+      font-size: 0.85em; // 80%?
+    }
+    //sub {}
+    //sup {}
+  
+    //code {}
+  
+    //dfn {}
+    //abbr {}
+    //abbr[title] {}
+  
+    //var {}
+    //kbd {}
+    //kbd kbd {}
+    //samp {}
+  
+    //u {}
+  
+    //data {}
+    //time {}
+  } // .ccm-page
+  
+  /*
+  
+  KEVIN POWELL EXTRAS?
+  
+  VARIABLE FONT SETUP
+  * {
+      font-variation-settings:
+        'wght' var(--font-weight, 375),
+        'wdth' var(--font-width, 80);
+  }
+  
+  // This is setting the font-sizes
+  // based on the ones in the abstract
+  // folder, go there to make updates
+  h1, .h1 { font-size: --fs-800; }
+  h2, .h2 { --flow-spacer: 1.5em; font-size: --fs-700; }
+  h3, .h3 { --flow-spacer: 1.5em; font-size: --fs-600; }
+  h4, .h4 { font-size: --fs-500; }
+  
+    .title {
+      font-size: clamp(var(--fs-600), calc(1rem + 5vw), 5rem);
+    }
+    
+    .article-snippet-title {
+      --font-weight: 600;
+    }
+    
+    time + p {
+      font-size: 1.25em;
+      margin: 2em 0 1em !important;
+    }
+  
+  p:not([class]),
+  ul:not([class]),
+  li:not([class]) {
+    max-width: 60ch;
+  }
+  
+  */
+  
