@@ -8,6 +8,7 @@
         "build:scss": "sass --no-source-map build/scss:build/",
         "build:js": "uglifyjs-folder build/js/ -eo application/themes/bluegreen/js",
         "copy:css": "copyfiles -u 2 build/css/styles.css application/themes/bluegreen/",
+        "copy:js": "copyfiles -u 2 build/js/scripts.css application/themes/bluegreen/js",
         "copy": "npm-run-all --parallel copy:*",
         "watch:scss": "sass --watch build/scss:build/css",
         "watch:guide": "sass --watch build/styleguide:build/styleguide",
