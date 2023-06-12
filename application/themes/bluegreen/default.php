@@ -15,10 +15,11 @@ if (is_object($rcobj[1])) {
 <!doctype html>
 <html class="no-js" lang="">
 <head>
-<!-- FONT? -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php View::element('header_required'); ?>
+<meta name="theme-color" content="#dcdadb" />
 <link rel="stylesheet" href="<?=$view->getThemePath()?>/styles.css">
 </head>
 <body>
@@ -27,13 +28,19 @@ if (is_object($rcobj[1])) {
 <?php $view->inc('elements/header.php'); ?>
 <main id="main_content">
 <?php $a = new Area('Page Header'); $a->display($c); ?>
-<?php $a = new Area('Main'); $a->display($c); ?>
-<?php $a = new Area('Sidebar'); $a->display($c); ?>
+<div class="layout-flex padded">
+  <div class="content flow"><?php $a = new Area('Intro'); $a->display($c); ?></div>
+  <div class="flow"><?php $a = new Area('Piccy'); $a->display($c); ?></div>
+</div>
+<div class="layout-flex divider padded">
+  <div class="content flow"><?php $a = new Area('Main'); $a->display($c); ?></div>
+  <div class="flow"><?php $a = new Area('Sidebar'); $a->display($c); ?></div>
+</div>
 <?php $a = new Area('Page Footer'); $a->display($c); ?>
 </main>
 <?php $view->inc('elements/footer.php'); ?>
 </div>
 <?php View::element('footer_required'); ?>
-<script src="<?=$view->getThemePath()?>/js/scripts-min.js"></script>
+<script src="<?=$view->getThemePath()?>/js/scripts.min.js" type="text/javascript"></script>
 </body>
 </html>
