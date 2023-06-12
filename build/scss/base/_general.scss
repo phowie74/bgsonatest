@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+// HTML, BODY & CCM-PAGE
+
+html {
+  font-size: 100%;
+}
+@include mq(medium) {
+  html {
+    font-size: 105%;
+  }
+}
+@include mq(large) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+}
+:target {
+  scroll-margin-top: 2rem;
+}
+:focus {
+  scroll-margin-bottom: 8vh;
+}
+body {
+  border-top: 10px solid $gray-lighter;
+	overflow-x: hidden;
+}

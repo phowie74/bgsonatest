@@ -1,0 +1,85 @@
+@use "../abstracts" as *;
+
+#toggle-menu {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding-top: 9px;
+    margin-top: .5rem;
+}
+@include mq(medium) {
+    #toggle-menu { display: none; }
+}
+
+#toggle-menu span:after,
+#toggle-menu span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -7px;
+}
+#toggle-menu span:after { top: 7px; }
+#toggle-menu span {
+    position: relative;
+    display: block;
+}
+#toggle-menu span,
+#toggle-menu span:after,
+#toggle-menu span:before {
+    width: 100%;
+    height: 3px;
+    background-color: $gray-darker;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 2px;
+}
+#toggle-menu:hover span,
+#toggle-menu:hover span:after,
+#toggle-menu:hover span:before { background-color: $gray; }
+/* on activation */
+#toggle-menu.on span { background-color: transparent; }
+#toggle-menu.on span:before { transform: rotate(45deg) translate(5px, 6px); }
+#toggle-menu.on span:after { transform: rotate(-45deg) translate(4px, -5px); }
+
+
+nav.js-menu #main-nav {
+    display: none;
+}
+@include mq(medium) {
+    nav.js-menu #main-nav { display: block !important; }
+}
+#main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#main-nav > li {
+    display: block;
+}
+@include mq(medium) {
+    #main-nav { font-size: 0; }
+    #main-nav > li {
+      display: inline-block;
+      position: relative;
+      font-size: 1rem;
+    }
+}
+  
+  
+#main-nav > li a,
+#main-nav > li a:link,
+#main-nav > li a:visited {
+    color: $gray-darker;
+    display: block;
+    //font-size: 0.8rem;
+    //font-weight: 400;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+#main-nav > li a:hover,
+#main-nav > li a:active,
+#main-nav > li a:focus,
+#main-nav > li.active > a  {
+    background: $brand-primary;
+}

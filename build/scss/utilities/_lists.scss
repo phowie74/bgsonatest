@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+.list-plain,
+.list-inline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.list-inline {
+    > li {
+        display: inline-block;
+    }
+    &.secondary-nav a {
+        display: block;
+        font-size: .9em;
+        padding-inline: .5rem;
+    }
+    &.secondary-nav > li + li {
+        border-left: 2px solid $gray;
+    }
+}

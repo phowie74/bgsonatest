@@ -1,12 +1,32 @@
 @use "../abstracts" as *;
 
-@each $color, $shade-map in $colors {
-  @each $shade, $value in $shade-map {
-    .clr-#{$color}-#{$shade} {
-      color: $value;
-    }
-    .bg-#{$color}-#{$shade} {
-      background-color: $value;
-    }
-  }
+.bg-primary {
+    background-color: $brand-primary;
 }
+
+.bg-tint {
+    background-color: $gray-lighter;
+}
+.bg-gray {
+    background-color: $gray;
+}
+.bg-dark,
+.bg-secondary {
+    background-color: $gray-darker;
+    color: #fff;
+}
+
+.clr-primary {
+    color: $brand-primary;
+}
+.clr-secondary {
+    color: $brand-primary;
+}
+.clr-tint {
+    color: $gray-lighter;
+}
+.clr-gray {
+    color: $gray;
+}
+
+

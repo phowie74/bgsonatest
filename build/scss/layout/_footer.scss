@@ -1,0 +1,41 @@
+@use "../abstracts" as *;
+
+footer {
+
+.layout-flex.justify-around:first-child > div {
+    flex-grow: 0;
+    flex-basis: auto;
+
+    > .list-inline > li + li {
+        border-left: 2px solid $brand-primary;
+    }
+    > .list-inline a {
+        color: $gray;
+        padding-inline: 1rem;
+    }
+}
+
+.layout-flex.highlight > * {
+    flex: 1 0 100%;
+    text-align: center;
+}
+
+@include mq(medium) {
+    .layout-flex.highlight > * {
+        flex: 1 1 0;
+        text-align: left;
+    }
+    .layout-flex > .logo {
+	    flex-grow: 0;
+	    flex-basis: auto;
+	    min-width: auto;
+    }
+    .layout-flex > .contact {
+        flex-grow: 2;
+    }
+    .layout-flex > .social {
+        text-align: right;
+    }
+}
+
+}

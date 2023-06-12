@@ -1,4 +1,28 @@
 @charset "UTF-8";
+/* Colours */
+/*
+@function clr($color, $shade) {
+  @if map.has-key($colors, $color, $shade) {
+    @return map.get($colors, $color, $shade);
+  } @else {
+    @error '$colors does not have that color!';
+  }
+}
+*/
+:root {
+  --font-size: 1rem;
+  --ratio: 1.2;
+  --fs-100: var(--font-size);
+  --fs-200: calc(var(--fs-100) * var(--ratio));
+  --fs-300: calc(var(--fs-200) * var(--ratio));
+  --fs-400: calc(var(--fs-300) * var(--ratio));
+  --fs-500: calc(var(--fs-400) * var(--ratio));
+  --fs-600: calc(var(--fs-500) * var(--ratio));
+  --fs-700: calc(var(--fs-600) * var(--ratio));
+  --fs-800: calc(var(--fs-700) * var(--ratio));
+  --fs-900: calc(var(--fs-800) * var(--ratio));
+}
+
 /*
 Credit to Andy Bell's Modern CSS Reset
 @link https://piccalil.li/blog/a-modern-css-reset/
@@ -112,41 +136,43 @@ select {
     scroll-behavior: auto !important;
   }
 }
-/*$sizes: (
-  8: 0.5rem,
-  12: 0.75rem,
-  16: 1rem,
-  20: 1.25rem,
-  32: 2rem,
-  36: 2.25rem,
-);*/
-/*
-$type-scale: (
-  small:( // Minor third
-    300: 1rem,
-    400: 1.125rem,
-    500: 1.563rem,
-    600: 1.953rem,
-    700: 2.441rem,
-    800: 3.052rem
-  ),
-  big:( // Augmented fourth
-    300: 1rem,
-    400: 1.25rem,
-    500: 2rem,
-    600: 2.827rem,
-    700: 4rem,
-    800: 5.653rem
-  )
-)
-*/
+html {
+  font-size: 100%;
+}
+
+@media screen and (min-width: 45em) {
+  html {
+    font-size: 105%;
+  }
+}
+@media screen and (min-width: 65em) {
+  html {
+    font-size: 112.5%;
+  }
+}
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 2rem;
+}
+
+:focus {
+  scroll-margin-bottom: 8vh;
+}
+
+body {
+  border-top: 10px solid #dcdadb;
+  overflow-x: hidden;
+}
+
 .ccm-page {
-  color: #333;
-  font-family: system-ui, sans-serif;
+  color: #53565a;
+  font-family: "Open Sans", "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
-  min-height: 0.01vw;
+  font-size: var(--fs-100);
   line-height: 1.4;
 }
 .ccm-page h1, .ccm-page .h1,
@@ -154,41 +180,33 @@ $type-scale: (
 .ccm-page h3, .ccm-page .h3,
 .ccm-page h4, .ccm-page .h4,
 .ccm-page h5, .ccm-page .h5 {
-  font-family: system-ui, sans-serif;
-  line-height: calc(2px + 2ex + 2px);
+  font-family: "Open Sans", "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   overflow-wrap: break-word;
   hyphens: auto;
-  font-weight: 400;
+  text-wrap: balance;
+  color: inherit;
 }
 .ccm-page h1, .ccm-page .h1 {
-  font-size: 2.44140625rem;
-  font-size: clamp(1.6357421875rem, 4.8056640625vw + 1rem, 2.44140625rem);
-  min-height: 0.01vw;
+  font-size: var(--fs-500);
 }
 .ccm-page h2, .ccm-page .h2 {
-  font-size: 1.953125rem;
-  font-size: clamp(1.30859375rem, 4.64453125vw + 1rem, 1.953125rem);
-  min-height: 0.01vw;
+  font-size: var(--fs-400);
 }
 .ccm-page h3, .ccm-page .h3 {
-  font-size: 1.5625rem;
-  font-size: clamp(1.046875rem, 4.515625vw + 1rem, 1.5625rem);
-  min-height: 0.01vw;
+  font-size: var(--fs-300);
 }
 .ccm-page h4, .ccm-page .h4 {
-  font-size: 1.25rem;
-  font-size: clamp(1rem, 4.25vw + 1rem, 1.25rem);
-  min-height: 0.01vw;
+  font-size: var(--fs-200);
 }
 .ccm-page h5, .ccm-page .h5 {
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
-  min-height: 0.01vw;
+  font-size: var(--fs-100);
+  font-weight: 700;
 }
 .ccm-page hr {
   margin-block: 2rem;
   border: none;
-  border-top: solid 1px #999;
+  border-top: solid 1px #939395;
   height: 0;
   padding: 0 !important;
 }
@@ -204,7 +222,7 @@ $type-scale: (
 .ccm-page em,
 .ccm-page i,
 .ccm-page text-italic {
-  font-family: system-ui, sans-serif;
+  font-family: "Open Sans", "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .ccm-page .text-large,
 .ccm-page .text-lead {
@@ -220,12 +238,7 @@ $type-scale: (
 
 KEVIN POWELL EXTRAS?
 
-VARIABLE FONT SETUP
-* {
-    font-variation-settings:
-      'wght' var(--font-weight, 375),
-      'wdth' var(--font-width, 80);
-}
+
 
 // This is setting the font-sizes
 // based on the ones in the abstract
@@ -255,172 +268,239 @@ li:not([class]) {
 }
 
 */
-.clr-primary-100 {
-  color: hsl(210, 100%, 85%);
+#toggle-menu {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  padding-top: 9px;
+  margin-top: 0.5rem;
 }
 
-.bg-primary-100 {
-  background-color: hsl(210, 100%, 85%);
+@media screen and (min-width: 45em) {
+  #toggle-menu {
+    display: none;
+  }
+}
+#toggle-menu span:after,
+#toggle-menu span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -7px;
 }
 
-.clr-primary-200 {
-  color: hsl(210, 100%, 75%);
+#toggle-menu span:after {
+  top: 7px;
 }
 
-.bg-primary-200 {
-  background-color: hsl(210, 100%, 75%);
+#toggle-menu span {
+  position: relative;
+  display: block;
 }
 
-.clr-primary-300 {
-  color: hsl(210, 100%, 50%);
+#toggle-menu span,
+#toggle-menu span:after,
+#toggle-menu span:before {
+  width: 100%;
+  height: 3px;
+  background-color: #53565a;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 2px;
 }
 
-.bg-primary-300 {
-  background-color: hsl(210, 100%, 50%);
+#toggle-menu:hover span,
+#toggle-menu:hover span:after,
+#toggle-menu:hover span:before {
+  background-color: #939395;
 }
 
-.clr-primary-400 {
-  color: hsl(210, 100%, 30%);
+/* on activation */
+#toggle-menu.on span {
+  background-color: transparent;
 }
 
-.bg-primary-400 {
-  background-color: hsl(210, 100%, 30%);
+#toggle-menu.on span:before {
+  transform: rotate(45deg) translate(5px, 6px);
 }
 
-.clr-primary-500 {
-  color: hsl(210, 100%, 12%);
+#toggle-menu.on span:after {
+  transform: rotate(-45deg) translate(4px, -5px);
 }
 
-.bg-primary-500 {
-  background-color: hsl(210, 100%, 12%);
+nav.js-menu #main-nav {
+  display: none;
 }
 
-.clr-secondary-100 {
-  color: hsl(153, 43%, 85%);
+@media screen and (min-width: 45em) {
+  nav.js-menu #main-nav {
+    display: block !important;
+  }
+}
+#main-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.bg-secondary-100 {
-  background-color: hsl(153, 43%, 85%);
+#main-nav > li {
+  display: block;
 }
 
-.clr-secondary-200 {
-  color: hsl(153, 43%, 70%);
+@media screen and (min-width: 45em) {
+  #main-nav {
+    font-size: 0;
+  }
+  #main-nav > li {
+    display: inline-block;
+    position: relative;
+    font-size: 1rem;
+  }
+}
+#main-nav > li a,
+#main-nav > li a:link,
+#main-nav > li a:visited {
+  color: #53565a;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
-.bg-secondary-200 {
-  background-color: hsl(153, 43%, 70%);
+#main-nav > li a:hover,
+#main-nav > li a:active,
+#main-nav > li a:focus,
+#main-nav > li.active > a {
+  background: #fedd00;
 }
 
-.clr-secondary-300 {
-  color: hsl(153, 43%, 42%);
+.layout-flex > .login {
+  order: 1;
+  flex-grow: 0;
+  flex-basis: auto;
+  min-width: auto;
 }
 
-.bg-secondary-300 {
-  background-color: hsl(153, 43%, 42%);
+.layout-flex > .secondary {
+  text-align: center;
 }
 
-.clr-secondary-400 {
-  color: hsl(153, 43%, 30%);
+@media screen and (min-width: 45em) {
+  .layout-flex > .secondary {
+    text-align: right;
+  }
+}
+.layout-flex > .tel,
+.layout-flex > .email,
+.layout-flex > .search {
+  flex-grow: 0;
+  flex-basis: auto;
+  min-width: auto;
+}
+.layout-flex > .tel svg,
+.layout-flex > .email svg,
+.layout-flex > .search svg {
+  height: 1.3em;
+  width: 1.3em;
+  vertical-align: middle;
+  transition: all 0.5s;
+  display: inline-block;
 }
 
-.bg-secondary-400 {
-  background-color: hsl(153, 43%, 30%);
+.layout-flex > .tel span,
+.layout-flex > .email span {
+  display: none;
 }
 
-.clr-secondary-500 {
-  color: hsl(153, 43%, 15%);
+@media screen and (min-width: 45em) {
+  .layout-flex > .tel span,
+  .layout-flex > .email span {
+    display: inline-block;
+  }
+}
+.layout-flex > .search a {
+  display: block;
+  padding: 4px;
 }
 
-.bg-secondary-500 {
-  background-color: hsl(153, 43%, 15%);
+nav.layout-flex {
+  border-bottom: solid 5px #fff;
 }
 
-.clr-accent-100 {
-  color: hsl(146, 100%, 80%);
+footer .layout-flex.justify-around:first-child > div {
+  flex-grow: 0;
+  flex-basis: auto;
+}
+footer .layout-flex.justify-around:first-child > div > .list-inline > li + li {
+  border-left: 2px solid #fedd00;
+}
+footer .layout-flex.justify-around:first-child > div > .list-inline a {
+  color: #939395;
+  padding-inline: 1rem;
+}
+footer .layout-flex.highlight > * {
+  flex: 1 0 100%;
+  text-align: center;
+}
+@media screen and (min-width: 45em) {
+  footer .layout-flex.highlight > * {
+    flex: 1 1 0;
+    text-align: left;
+  }
+  footer .layout-flex > .logo {
+    flex-grow: 0;
+    flex-basis: auto;
+    min-width: auto;
+  }
+  footer .layout-flex > .contact {
+    flex-grow: 2;
+  }
+  footer .layout-flex > .social {
+    text-align: right;
+  }
 }
 
-.bg-accent-100 {
-  background-color: hsl(146, 100%, 80%);
+.layout-flex > .content {
+  flex-grow: 2.5;
+  min-width: 400px;
 }
 
-.clr-accent-200 {
-  color: hsl(146, 100%, 65%);
+.bg-primary {
+  background-color: #fedd00;
 }
 
-.bg-accent-200 {
-  background-color: hsl(146, 100%, 65%);
+.bg-tint {
+  background-color: #dcdadb;
 }
 
-.clr-accent-300 {
-  color: hsl(146, 100%, 50%);
+.bg-gray {
+  background-color: #939395;
 }
 
-.bg-accent-300 {
-  background-color: hsl(146, 100%, 50%);
+.bg-dark,
+.bg-secondary {
+  background-color: #53565a;
+  color: #fff;
 }
 
-.clr-accent-400 {
-  color: hsl(146, 100%, 35%);
+.clr-primary {
+  color: #fedd00;
 }
 
-.bg-accent-400 {
-  background-color: hsl(146, 100%, 35%);
+.clr-secondary {
+  color: #fedd00;
 }
 
-.clr-accent-500 {
-  color: hsl(146, 100%, 20%);
+.clr-tint {
+  color: #dcdadb;
 }
 
-.bg-accent-500 {
-  background-color: hsl(146, 100%, 20%);
+.clr-gray {
+  color: #939395;
 }
 
-.clr-neutral-100 {
-  color: hsl(0, 0%, 100%);
-}
-
-.bg-neutral-100 {
-  background-color: hsl(0, 0%, 100%);
-}
-
-.clr-neutral-200 {
-  color: hsl(0, 0%, 87%);
-}
-
-.bg-neutral-200 {
-  background-color: hsl(0, 0%, 87%);
-}
-
-.clr-neutral-300 {
-  color: hsl(0, 0%, 80%);
-}
-
-.bg-neutral-300 {
-  background-color: hsl(0, 0%, 80%);
-}
-
-.clr-neutral-700 {
-  color: hsl(0, 0%, 40%);
-}
-
-.bg-neutral-700 {
-  background-color: hsl(0, 0%, 40%);
-}
-
-.clr-neutral-800 {
-  color: hsl(0, 0%, 30%);
-}
-
-.bg-neutral-800 {
-  background-color: hsl(0, 0%, 30%);
-}
-
-.clr-neutral-900 {
-  color: hsl(0, 0%, 15%);
-}
-
-.bg-neutral-900 {
-  background-color: hsl(0, 0%, 15%);
+.flow > * + * {
+  margin-top: var(--flow-spacer, 1em);
 }
 
 .fs-900 {
@@ -447,23 +527,72 @@ li:not([class]) {
   font-size: 1rem;
 }
 
+.layout-flex {
+  --gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  padding-inline: max(1rem, 50vw - 600px);
+}
+
+.layout-flex > * {
+  flex: 1 1 0;
+  min-width: 250px;
+}
+
+.padded {
+  padding-block: var(--padded, 2rem);
+}
+
+.border {
+  border-top: 2px dashed #dcdadb;
+}
+
+.highlight {
+  border-top: 5px solid #fedd00;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+.justify-around > * {
+  flex-basis: auto;
+  flex-grow: 0;
+  min-width: auto;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.list-plain,
+.list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-inline > li {
+  display: inline-block;
+}
+.list-inline.secondary-nav a {
+  display: block;
+  font-size: 0.9em;
+  padding-inline: 0.5rem;
+}
+.list-inline.secondary-nav > li + li {
+  border-left: 2px solid #939395;
+}
+
 .margin-sm {
   margin: 0.5rem;
 }
-.margin-block-start-sm {
-  margin-block-start: 0.5rem;
-}
-.margin-block-end-sm {
-  margin-block-end: 0.5rem;
-}
 .margin-block-sm {
   margin-block: 0.5rem;
-}
-.margin-inline-start-sm {
-  margin-inline-start: 0.5rem;
-}
-.margin-inline-end-sm {
-  margin-inline-end: 0.5rem;
 }
 .margin-inline-sm {
   margin-inline: 0.5rem;
@@ -472,20 +601,8 @@ li:not([class]) {
 .padding-sm {
   padding: 0.5rem;
 }
-.padding-block-start-sm {
-  padding-block-start: 0.5rem;
-}
-.padding-block-end-sm {
-  padding-block-end: 0.5rem;
-}
 .padding-block-sm {
   padding-block: 0.5rem;
-}
-.padding-inline-start-sm {
-  padding-inline-start: 0.5rem;
-}
-.padding-inline-end-sm {
-  padding-inline-end: 0.5rem;
 }
 .padding-inline-sm {
   padding-inline: 0.5rem;
@@ -494,20 +611,8 @@ li:not([class]) {
 .margin-md {
   margin: 1rem;
 }
-.margin-block-start-md {
-  margin-block-start: 1rem;
-}
-.margin-block-end-md {
-  margin-block-end: 1rem;
-}
 .margin-block-md {
   margin-block: 1rem;
-}
-.margin-inline-start-md {
-  margin-inline-start: 1rem;
-}
-.margin-inline-end-md {
-  margin-inline-end: 1rem;
 }
 .margin-inline-md {
   margin-inline: 1rem;
@@ -516,20 +621,8 @@ li:not([class]) {
 .padding-md {
   padding: 1rem;
 }
-.padding-block-start-md {
-  padding-block-start: 1rem;
-}
-.padding-block-end-md {
-  padding-block-end: 1rem;
-}
 .padding-block-md {
   padding-block: 1rem;
-}
-.padding-inline-start-md {
-  padding-inline-start: 1rem;
-}
-.padding-inline-end-md {
-  padding-inline-end: 1rem;
 }
 .padding-inline-md {
   padding-inline: 1rem;
@@ -538,20 +631,8 @@ li:not([class]) {
 .margin-lg {
   margin: 2rem;
 }
-.margin-block-start-lg {
-  margin-block-start: 2rem;
-}
-.margin-block-end-lg {
-  margin-block-end: 2rem;
-}
 .margin-block-lg {
   margin-block: 2rem;
-}
-.margin-inline-start-lg {
-  margin-inline-start: 2rem;
-}
-.margin-inline-end-lg {
-  margin-inline-end: 2rem;
 }
 .margin-inline-lg {
   margin-inline: 2rem;
@@ -560,23 +641,26 @@ li:not([class]) {
 .padding-lg {
   padding: 2rem;
 }
-.padding-block-start-lg {
-  padding-block-start: 2rem;
-}
-.padding-block-end-lg {
-  padding-block-end: 2rem;
-}
 .padding-block-lg {
   padding-block: 2rem;
 }
-.padding-inline-start-lg {
-  padding-inline-start: 2rem;
-}
-.padding-inline-end-lg {
-  padding-inline-end: 2rem;
-}
 .padding-inline-lg {
   padding-inline: 2rem;
+}
+
+.visually-hidden,
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

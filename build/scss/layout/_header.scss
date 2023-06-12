@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.layout-flex > .login {
+	order: 1;
+	flex-grow: 0;
+	flex-basis: auto;
+	min-width: auto;
+}
+.layout-flex > .secondary {
+	text-align: center;
+}
+@include mq(medium) {
+	.layout-flex > .secondary {
+		text-align: right;
+	}
+}
+
+.layout-flex > .tel,
+.layout-flex > .email,
+.layout-flex > .search {
+	flex-grow: 0;
+	flex-basis: auto;
+	min-width: auto;
+
+	& svg {
+		height: 1.3em;
+		width: 1.3em;
+		vertical-align: middle;
+		//fill: #fedd00;
+		transition: all 0.5s;
+		display: inline-block;
+	}
+}
+.layout-flex > .tel span,
+.layout-flex > .email span {
+	display: none;
+}
+@include mq(medium) {
+	.layout-flex > .tel span,
+	.layout-flex > .email span {
+		display: inline-block;
+	}
+}
+.layout-flex > .search a {
+	display: block;
+	padding: 4px;
+}
+
+nav.layout-flex {
+    border-bottom: solid 5px #fff;
+}

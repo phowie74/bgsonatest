@@ -1,37 +1,9 @@
-// bluegreen colours as default starting point...
 
-$colors: (
-  primary: (
-    100: hsl(210, 100%, 85%),
-    200: hsl(210, 100%, 75%),
-    300: hsl(210, 100%, 50%),
-    400: hsl(210, 100%, 30%),
-    500: hsl(210, 100%, 12%),
-    // Navy
-  ),
-  secondary: (
-    100: hsl(153,43%,85%),
-    200: hsl(153,43%,70%),
-    300: hsl(153,43%,42%),
-    // Olive
-    400: hsl(153,43%,30%),
-    500: hsl(153,43%,15%),
-    
-  ),
-  accent: (
-    100: hsl(146, 100%, 80%),
-    200: hsl(146, 100%, 65%),
-    300: hsl(146, 100%, 50%),
-    // Highlight
-    400: hsl(146, 100%, 35%),
-    500: hsl(146, 100%, 20%),
-  ),
-  neutral: (
-    100: hsl(0, 0%, 100%),
-    200: hsl(0, 0%, 87%),
-    300: hsl(0, 0%, 80%),
-    700: hsl(0, 0%, 40%),
-    800: hsl(0, 0%, 30%),
-    900: hsl(0, 0%, 15%),
-  ),
-);
+
+/* Colours */
+$brand-primary: #fedd00;
+$brand-secondary: #53565a;
+
+$gray-darker: $brand-secondary;
+$gray: #939395;
+$gray-lighter: #dcdadb;

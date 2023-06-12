@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+:root {
+    --font-size: 1rem; // Base font size
+    --ratio: 1.2; // Ratio for font scale
+  
+    // Loop to create CSS font size variables
+    // based on Perfect Fourth scale
+    @for $i from 1 through 9 {
+      @if $i == 1 {
+        --fs-#{$i}00: var(--font-size);
+      } @else {
+        --fs-#{$i}00: calc(var(--fs-#{$previous-fs}00) * var(--ratio));
+      }
+  
+      $previous-fs: $i;
+    }
+}

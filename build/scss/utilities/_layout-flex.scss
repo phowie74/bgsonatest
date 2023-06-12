@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+
+.layout-flex {
+    --gap: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+	
+	padding-inline: max(1rem, 50vw - 600px);
+}
+.layout-flex > * {
+	flex: 1 1 0;
+    min-width: 250px;
+}
+
+.padded {
+	padding-block: var(--padded, 2rem);
+}
+.border {
+	border-top: 2px dashed $gray-lighter;
+}
+.highlight {
+	border-top: 5px solid $brand-primary;
+}
+
+
+.justify-end {
+	justify-content: flex-end;
+}
+.justify-around {
+	justify-content: space-around;
+	> * {
+		flex-basis: auto;
+		flex-grow: 0;
+		min-width: auto;
+	}
+}
+.align-center {
+	align-items: center;
+}
