@@ -1,11 +1,10 @@
-<?php defined('C5_EXECUTE') or die('Access Denied.');
-namespace Concrete\Application\Themes\Bluegreen;
-
+<?php
+namespace Application\Theme\Bluegreen;
 use Concrete\Core\Area\Layout\Preset\Provider\ThemeProviderInterface;
 use Concrete\Core\Page\Theme\Theme;
 
 class PageTheme extends Theme implements ThemeProviderInterface {
-    protected $pThemeGridFrameworkHandle = false;
+    //protected $pThemeGridFrameworkHandle = false;
 
     public function getThemeName() {
         return t('Bluegreen');
