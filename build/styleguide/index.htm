@@ -1,296 +1,53 @@
 <!doctype html>
 <html class="no-js" lang="en">
-<head>
-<!-- FONTS? -->
-<meta charset="utf-8">
-<title>Styleguide</title>
-<meta name="description" content="">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/styles.css">
-<link rel="stylesheet" href="styleguide.css">
-</head>
-<body>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none"><defs><symbol id="circle-arrow-down" viewbox="0 0 24 24" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-miterlimit="10"></circle><line x1="12" y1="6.27" x2="12" y2="17.73" fill="none" stroke="currentColor" stroke-miterlimit="10"></line><polyline points="16.77 12.96 12 17.73 7.23 12.96" fill="none" stroke="currentColor" stroke-miterlimit="10"></polyline></symbol></defs><use href="#circle-arrow-down"/></svg>
-<div class="bg-page ccm-page">
-<a href="#main_content" class="visually-hidden">Skip to content</a>
-<header class="bg-header bg-flow">
-<h1 class="">Living Styleguide</h1>
-<p class="">Developer documentation of scss styles - for previewing locally only in browser-sync...</p>
-<p><small>NB. use <a href="https://www.texttool.com/html-encode">https://www.texttool.com/html-encode</a> to encode code blocks!</a></small></p>
-</header>
-<main id="main_content" class="bg-flow">
 
-    <div>
-        <details>
-          <summary>
-                <h2><a name="base">Base</a></h2>
-        <svg width="24" height="24" version="2.0">
-        <use href="#circle-arrow-down" />
-        </svg>
-          </summary>
-            <div class="bg-white">
-        
-                
-                        <div class="bg-box bg-flow">
-                    <h2>Content</h2>
-                    <p>Using the Format dropdown and the styling buttons in the Content Block toolbar will give you the basic default styles from the stylesheet.</p>
-                </div>
-                
-                
-                <div class="bg-grid">
-                    <div class="bg-flow">
-        <h3 class="bg">Headings</h3>
-                <p class="bg">Headings are set up in a sliding scale to make content hierarchy clearer...</p>
-<!-- prettier-ignore -->
-<pre class="bg-code" data-lang='html'><code>
-&lt;h1&gt;Heading 1&lt;/h1&gt;
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-&lt;h4&gt;Heading 4&lt;/h4&gt;
-&lt;h5&gt;Heading 5&lt;/h5&gt;
-</code></pre>
-<!-- /prettier-ignore -->
-                    </div>
-                    <div class="bg-flow">
-        <h1>Heading 1</h1>
-        <p class="bg">PLEASE NOTE: There should be only one Heading 1 per page which is set up by default in most templates.</p>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>				
-                    </div>	
-                </div>
-        <p><a href="#base" class="bg">[TOP]</a></p>	
-                <hr class="bg">
-                    
-                
-                
-        <div class="bg-grid">
-            <div class="bg-flow"><h3 class="bg">Text Styles</h3>
-                <p class="bg">Styles available using the formatting buttons in the Content Block...</p>
-                    
-<!-- prettier-ignore -->
-<pre class="bg-code" data-lang='html'><code>
-&lt;p&gt;The default font is set as...&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;This is the default style for strong/bold text.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;This is the default style for emphasis/italic text.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#0"&gt;This is the default style for links.&lt;/a&gt;&lt;/p&gt;
-</code></pre>
-<!-- /prettier-ignore -->
-                
-                </div>
-            <div class="bg-flow"><p>The default font is set as XXX with a base size ranging from 16px to 20px depending on screen size. Basic styles for <a href="#0">hyperlinks</a>, for <em>italics / emphasis</em> and for <strong>bold</strong> text have already been set up in the style sheet.<p>
-                    <p><strong>This is the default style for strong/bold text.</strong></p>
-                    <p><em>This is the default style for emphasis/italic text.</em></p>
-                    <p><a href="#0">This is the default style for links.</a></p>
-                    <p class="bg">Further styling options are available from the Styles dropdown - see Utilities below.</p></div>
-        </div>
-        <p><a href="#base" class="bg">[TOP]</a></p>		
-        <hr class="bg">
-        
-        <div class="bg-grid">
-            <div class="bg-flow"><h3 class="bg">Lists</h3>
-                <p class="bg">Using the List options in the content block...</p>
-<!-- prettier-ignore -->
-<pre class="bg-code" data-lang='html'><code>
-&lt;ul&gt;
-&lt;li&gt;Unordered List Items&lt;/li&gt;
-&lt;li&gt;Unordered List Items&lt;/li&gt;
-&lt;li&gt;Unordered List Items&lt;/li&gt;
-&lt;/ul&gt;
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>Styleguide</title>
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#dcdadb" />
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="styleguide.css">
+    </head>
 
-&lt;ol&gt;
-&lt;li&gt;Ordered List Items&lt;/li&gt;
-&lt;li&gt;Ordered List Items&lt;/li&gt;
-&lt;li&gt;Ordered List Items&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre>
-<!-- /prettier-ignore -->
-                </div>
-            <div class="bg-flow">		<ul>
-                    <li>Unordered List Items</li>
-                    <li>Unordered List Items</li>
-                    <li>Unordered List Items</li>
-                    <li>Unordered List Items</li>
-                    <li>Unordered List Items</li>
-                </ul>
-                <ol>
-                    <li>Ordered List Items</li>
-                    <li>Ordered List Items</li>
-                    <li>Ordered List Items</li>
-                    <li>Ordered List Items</li>
-                    <li>Ordered List Items</li>
-                </ol></div>
-        </div>
-        <p><a href="#base" class="bg">[TOP]</a></p>
-        <hr class="bg">
-            
-        <div class="bg-grid">
-            <div class="bg-flow"><h3 class="bg">Blockquote</h3>
-                <p class="bg">Using the Blockquote in the Content block...</p>
-<!-- prettier-ignore -->
-<pre class="bg-code" data-lang='html'><code>
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;"This is a very exciting quote"&lt;/strong&gt;&lt;br&gt;
-Mr V. Important&lt;/p&gt;
-&lt;/blockquote&gt;
-</code></pre>
-<!-- /prettier-ignore -->
-                </div>
-            <div class="bg-flow"><blockquote>
-        <p><strong>"This is a very exciting quote"</strong><br>
-        Mr V. Important</p>
-        </blockquote></div>
-        </div>
-        <p><a href="#base" class="bg">[TOP]</a></p>		
-        <hr class="bg">
-        
-        <div class="bg-grid">
-            <div class="bg-flow"><h3 class="bg">Divider / Horizontal Rule</h3>
-                <p class="bg">Using the Divider in the Content block...</p>
-<!-- prettier-ignore -->
-<pre class="bg-code" data-lang='html'><code>
-&lt;hr&gt;
-</code></pre>
-<!-- /prettier-ignore -->
-                </div>
-            <div class="bg-flow"><hr></div>
-        </div>
-            <p><a href="#base" class="bg">[TOP]</a></p>	
-        <hr class="bg">
-            
-            <div class="bg-box bg-flow">
-                    <h2>Image</h2>
-                    <p>Adding images as a lock or within content.</p>
-                </div>
-                
-        <p><a href="#base" class="bg">[TOP]</a></p>	
-        <hr class="bg">	
-                
-                    <div class="bg-grid">
-                <div class="bg-flow"><h3 class="bg">Images</h3>
-                <p class="bg">Images are responsive by default...</p></div>
-                <div class="bg-flow">[PICCY]</div>
-            </div>	
-                
-        <p><a href="#base" class="bg">[TOP]</a></p>	
-        <hr class="bg">
-        
-                
-        <div class="bg-grid">
-            <div class="bg-flow"><h3 class="bg">Figure / Figcaption</h3>
-                <p class="bg">Figures can include a caption...</p></div>
-            <div class="bg-flow">[PICCY]</div>
-        </div>
-        <p><a href="#base" class="bg">[TOP]</a></p>			
-                
-                </div>
-        </details>	
-            
-            
-            <details class="">
-          <summary>
-                <h2><a name="utilities">Utilities</a></h2>
-        <svg width="24" height="24" version="2.0">
-        <use href="#circle-arrow-down" />
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none">
+            <defs>
+                <symbol id="circle-arrow-down" viewbox="0 0 24 24" stroke-width="2" width="24" height="24">
+                    <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-miterlimit="10"></circle>
+                    <line x1="12" y1="6.27" x2="12" y2="17.73" fill="none" stroke="currentColor" stroke-miterlimit="10"></line>
+                    <polyline points="16.77 12.96 12 17.73 7.23 12.96" fill="none" stroke="currentColor" stroke-miterlimit="10"></polyline>
+                </symbol>
+            </defs>
+            <use href="#circle-arrow-down" />
         </svg>
-          </summary>
-            <div class="bg-white bg-flow">
-                <div class="bg-box bg-flow">
-                    <h2>Content</h2>
-                    <p>Using the Styles dropdown and the styling buttons in the Content Block toolbar will give you additional styles from the stylesheet.</p>
-                </div>
-                
-                        <h3 class="bg">Text Styles</h3>
-                <p class="bg">Text can be customised using the following styles...</p>
-        
-        <p class="text-lead">Lead Text - Emphasised text for introductory paragraphs.</p>
-        <p class="text-highlight">Highlight Text - Brand coloured text to highlight content.</p>
-        <p class="text-small">Small Text - Smaller text size for smallprint.</p>
-        <p class="text-muted">Muted Text - Lighter text color for subtle effect.</p>
-        <p class="text-small text-muted">Small Muted Text - Smaller lighter text size for subtle effect smallprint.</p>
-        <p class="bg">Headings sizes can be replicated without impacting SEO...</p>
-        
-        <p class="h1">h1 styling class</p>
-        <p class="h2">h2 styling class</p>
-        <p class="h3">h3 styling class</p>
-                
-                <p class="bg">Links can be styled to appear as buttons...</p>
-                
-                <p><a href="#0" class="btn">Button</a></p>
-        
-                <hr class="bg">
-                    <p><a href="#utilities" class="bg">[TOP]</a></p>
-        
-                <div class="bg-box bg-bg-flow">
-                    <h2>Colour</h2>
-                    <p>Flexibility to change background and text colours.</p>
-                </div>
-        
-        <h3 class="bg">Text Colours</h3>
-                <p class="bg">Text can be customised using the following styles...</p>
-                
-                <p class="clr-primary">This is Primary colour text.</p>
-                
-        <hr class="bg">
-                    <p><a href="#utilities" class="bg">[TOP]</a></p>
-                
-        <h3 class="bg">Background Styles</h3>
-                <p class="bg">Backgrounds can be customised using the following styles...</p>
-                
-                        <div class="box bg-primary">
-                    <p>This is a Primary colour background</p>
-                </div>
-                
-        <hr class="bg">
-                    <p><a href="#utilities" class="bg">[TOP]</a></p>
-        
-                        <div class="bg-box bg-flow">
-                    <h2>Sizing</h2>
-                    <p>Flexibility to change text sizing as required.</p>
-                        </div>	
-                            
-            <hr class="bg">
-                    <p><a href="#utilities" class="bg">[TOP]</a></p>				
-                                    <div class="bg-box bg-flow">
-                    <h2>Spacing</h2>
-                    <p>Flexibility to change spacing between elements.</p>
-                </div>
-                            
-                            <hr class="bg">
-                    <p><a href="#utilities" class="bg">[TOP]</a></p>
-                </div>
-                
-                
-        </details>	
-            
-        <details class="">
-          <summary>
-                <h2><a name="components">Components</a></h2>
-        <svg width="24" height="24" version="2.0">
-        <use href="#circle-arrow-down" />
-        </svg>
-          </summary>
-            <div class="bg-white bg-flow">
-                <div class="bg-box">
-                    <h2>Content</h2>
-                    <p>Using the Format dropdown and the styling buttons in the Content Block toolbar will give you the basic default styles from the stylesheet.</p>
-                </div>
-        
-                
-                <hr class="bg">
-                    <p><a href="#utilities" class="bg">[TOP]</a></p>
-                </div>
-        </details>	
-            
-        
-        </div>	
-</main>
-<footer class="bg-header bg-flow">
-<p>&copy; Bluegreen Design Consultants Ltd</p>
-</footer>
-</div><!-- .ccm-page -->
-<script src="../js/scripts.js"></script>
-</body>
+
+
+
+        <div class="ccm-page flow">
+            <a href="#main_content" class="visually-hidden">Skip to content</a>
+            <h1 class="" style="font-size: 3.052em;">A Visual Type Scale</h1>
+            <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.</p>
+            <p>When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>
+            <h2 class="" style="font-size: 2.441em;">A Visual Type Scale</h2>
+            <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.</p>
+            <p>When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>
+            <h3 class="" style="font-size: 1.953em;">A Visual Type Scale</h3>
+            <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.</p>
+            <p>When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>
+            <h4 class="" style="font-size: 1.563em;">A Visual Type Scale</h4>
+            <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.</p>
+            <p>When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>
+            <h5 class="" style="font-size: 1.25em;">A Visual Type Scale</h5>
+            <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.</p>
+            <p>When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>
+
+
+        </div><!-- .ccm-page -->
+        <script src="../js/scripts.js"></script>
+    </body>
+
 </html>

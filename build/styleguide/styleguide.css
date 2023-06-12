@@ -17,7 +17,6 @@
 .bg-page {
   width: min(100% - 2rem, 1200px);
   margin-inline: auto;
-  color: #2c2d6c;
   line-height: 1.4;
 }
 
