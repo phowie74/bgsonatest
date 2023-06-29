@@ -390,6 +390,33 @@ nav.js-menu #main-nav {
     text-align: right;
   }
 }
+a.header-logo {
+  display: inline-block;
+  max-width: 200px;
+}
+
+.header-logo.play svg {
+  pointer-events: none;
+}
+
+.header-logo.play svg rect#wipe {
+  animation: slidein 3s ease forwards 1;
+}
+
+@keyframes slidein {
+  from {
+    transform: translatex(0);
+  }
+  50% {
+    transform: translatex(100%);
+  }
+  51% {
+    transform: translatex(-100%);
+  }
+  to {
+    transform: translatex(0);
+  }
+}
 .layout-flex > .tel,
 .layout-flex > .email,
 .layout-flex > .search {
@@ -418,8 +445,46 @@ nav.js-menu #main-nav {
     display: inline-block;
   }
 }
+.layout-flex > .search a {
+  display: block;
+  padding: 4px;
+}
+
 nav.layout-flex {
   border-bottom: solid 5px #fff;
+}
+
+footer .layout-flex.justify-around:first-child > div {
+  flex-grow: 0;
+  flex-basis: auto;
+}
+footer .layout-flex.justify-around:first-child > div > .list-inline > li + li {
+  border-left: 2px solid #fedd00;
+}
+footer .layout-flex.justify-around:first-child > div > .list-inline a {
+  color: #939395;
+  padding-inline: 1rem;
+}
+footer .layout-flex.highlight > * {
+  flex: 1 0 100%;
+  text-align: center;
+}
+@media screen and (min-width: 45em) {
+  footer .layout-flex.highlight > * {
+    flex: 1 1 0;
+    text-align: left;
+  }
+  footer .layout-flex > .logo {
+    flex-grow: 0;
+    flex-basis: auto;
+    min-width: auto;
+  }
+  footer .layout-flex > .contact {
+    flex-grow: 2;
+  }
+  footer .layout-flex > .social {
+    text-align: right;
+  }
 }
 
 .layout-flex > .content {
@@ -493,7 +558,7 @@ nav.layout-flex {
   --gap: 1rem;
   display: flex;
   flex-wrap: wrap;
-  column-gap: var(--gap);
+  gap: var(--gap);
   padding-inline: max(1rem, 50vw - 600px);
 }
 
@@ -506,8 +571,25 @@ nav.layout-flex {
   padding-block: var(--padded, 2rem);
 }
 
+.border {
+  border-top: 2px dashed #dcdadb;
+}
+
+.highlight {
+  border-top: 5px solid #fedd00;
+}
+
 .justify-end {
   justify-content: flex-end;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+.justify-around > * {
+  flex-basis: auto;
+  flex-grow: 0;
+  min-width: auto;
 }
 
 .align-center {

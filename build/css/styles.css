@@ -390,6 +390,34 @@ nav.js-menu #main-nav {
     text-align: right;
   }
 }
+a.header-logo {
+  display: inline-block;
+  width: 100px;
+  vertical-align: middle;
+}
+
+.header-logo.play svg {
+  pointer-events: none;
+}
+
+.header-logo.play svg rect#wipe {
+  animation: slidein 3s ease forwards 1;
+}
+
+@keyframes slidein {
+  from {
+    transform: translatex(0);
+  }
+  50% {
+    transform: translatex(100%);
+  }
+  51% {
+    transform: translatex(-100%);
+  }
+  to {
+    transform: translatex(0);
+  }
+}
 .layout-flex > .tel,
 .layout-flex > .email,
 .layout-flex > .search {
@@ -567,6 +595,15 @@ footer .layout-flex.highlight > * {
 
 .align-center {
   align-items: center;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  grid-gap: 2rem;
+}
+.layout-grid > .grid-full {
+  grid-column: 1/-1;
 }
 
 .list-plain,

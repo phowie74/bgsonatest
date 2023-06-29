@@ -6,3 +6,11 @@ $(function () {
         e.preventDefault();
     });
 });
+
+var logo = document.querySelector(".header-logo");
+logo.addEventListener("mouseenter", (e) => {
+	logo.classList.add("play");
+	setTimeout(function(){
+      logo.classList.remove("play");
+    }, 3000);
+});
