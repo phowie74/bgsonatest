@@ -1,0 +1,9 @@
+.layout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-gap: 2rem;
+  
+    > .grid-full {
+      grid-column: 1/-1;
+    }
+  }

@@ -390,6 +390,11 @@ nav.js-menu #main-nav {
     text-align: right;
   }
 }
+.logo > span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 a.header-logo {
   display: inline-block;
   width: 100px;
