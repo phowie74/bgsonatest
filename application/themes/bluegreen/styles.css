@@ -214,6 +214,10 @@ body {
   color: inherit;
   text-decoration: none;
 }
+.ccm-page a:not([class]):hover, .ccm-page a:not([class]):focus {
+  background-color: #fedd00;
+  box-shadow: 0 0 0 2px #fedd00;
+}
 .ccm-page strong,
 .ccm-page b,
 .ccm-page .text-strong {
@@ -372,6 +376,110 @@ nav.js-menu #main-nav {
 #main-nav > li a:focus,
 #main-nav > li.active > a {
   background: #fedd00;
+  box-shadow: none;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+button.btn {
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+@media screen and (-ms-high-contrast: active) {
+  button.btn {
+    border: 2px solid currentcolor;
+  }
+}
+
+a.btn,
+button.btn {
+  --btn-background: #dcdadb;
+  --btn-color: #53565a;
+  --btn-focus: var(--btn-background);
+  --outline-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--btn-background);
+  color: var(--btn-color);
+  border-radius: 0.75em 0;
+  padding: 0.5em 1em;
+  border: 2px solid transparent;
+  min-width: 10ch;
+  text-align: center;
+  line-height: 1.1;
+  font-weight: bold;
+  transition: 220ms all ease;
+  position: relative;
+}
+a.btn:before,
+button.btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: 50%;
+}
+a.btn:hover, a.btn:active,
+button.btn:hover,
+button.btn:active {
+  background-color: var(--btn-color);
+  color: var(--btn-background);
+}
+a.btn:hover:before, a.btn:active:before,
+button.btn:hover:before,
+button.btn:active:before {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+a.btn.focus, a.btn:focus,
+button.btn.focus,
+button.btn:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  box-shadow: inset 0 0 0 3px #fff, 0 0 0 3px var(--btn-focus), 0 1px 1px hsla(0, 0%, 0%, 0.075), 0 2px 2px hsla(0, 0%, 0%, 0.075), 0 4px 4px hsla(0, 0%, 0%, 0.075);
+}
+a.btn-inverted,
+button.btn-inverted {
+  --btn-background: #53565a;
+  --btn-color: #dcdadb;
+}
+a.btn--small,
+button.btn--small {
+  font-size: 80%;
+}
+a.btn--large,
+button.btn--large {
+  font-size: 120%;
+}
+a.btn--block,
+button.btn--block {
+  width: 100%;
+}
+a.btn--outlined,
+button.btn--outlined {
+  --btn-focus: var(--btn-color);
+  border-color: var(--btn-color);
+}
+a.btn--header,
+button.btn--header {
+  --btn-background: #dcdadb;
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+a.btn--header:hover, a.btn--header:active,
+button.btn--header:hover,
+button.btn--header:active {
+  --btn-color: #dcdadb;
+  --btn-background: #222;
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.075), 0 2px 2px hsla(0, 0%, 0%, 0.075), 0 4px 4px hsla(0, 0%, 0%, 0.075);
+}
+a.btn--header.focus, a.btn--header:focus,
+button.btn--header.focus,
+button.btn--header:focus {
+  --btn-focus: #dcdadb;
 }
 
 .layout-flex > .login {
@@ -383,6 +491,7 @@ nav.js-menu #main-nav {
 
 .layout-flex > .secondary {
   text-align: center;
+  align-self: center;
 }
 
 @media screen and (min-width: 45em) {
@@ -532,6 +641,10 @@ footer .layout-flex.highlight > * {
   color: #939395;
 }
 
+.wrapper {
+  padding-inline: max(1rem, 50vw - 600px);
+}
+
 .flow > * + * {
   margin-top: var(--flow-spacer, 1em);
 }
@@ -565,7 +678,6 @@ footer .layout-flex.highlight > * {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
-  padding-inline: max(1rem, 50vw - 600px);
 }
 
 .layout-flex > * {

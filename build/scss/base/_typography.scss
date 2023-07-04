@@ -97,6 +97,15 @@
       }
       //&:active {}
     }
+    a:not([class]) {
+      &:hover,
+      &:focus {
+        //color: var(--clr-primary-400);
+        //text-decoration: none;
+        background-color: $brand-primary;
+        box-shadow: 0 0 0 2px $brand-primary;
+      }
+    }
   
     strong,
     b,

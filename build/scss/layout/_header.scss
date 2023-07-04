@@ -8,6 +8,7 @@
 }
 .layout-flex > .secondary {
 	text-align: center;
+	align-self: center;
 }
 @include mq(medium) {
 	.layout-flex > .secondary {

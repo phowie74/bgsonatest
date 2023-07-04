@@ -82,4 +82,5 @@ nav.js-menu #main-nav {
 #main-nav > li a:focus,
 #main-nav > li.active > a  {
     background: $brand-primary;
+    box-shadow: none;
 }

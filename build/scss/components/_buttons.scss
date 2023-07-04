@@ -1,0 +1,123 @@
+@use "../abstracts" as *;
+
+a.btn { // link buttons
+	text-decoration: none;
+}
+button.btn { // buttons
+	//border: none;
+	background-color: transparent;
+	font-family: inherit;
+	padding: 0;
+	cursor: pointer;
+	
+	@media screen and (-ms-high-contrast: active) {
+		border: 2px solid currentcolor;
+	}
+}
+
+a.btn,
+button.btn {
+	--btn-background: #dcdadb;
+    --btn-color: #53565a;
+	//--btn-background-hover: var(--color-on-#{$button-default-color});
+	//--btn-color-hover: var(--color-#{$button-default-color});
+	--btn-focus: var(--btn-background);
+    --outline-color: transparent;
+	
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	
+	background-color: var(--btn-background);
+	color: var(--btn-color);
+	border-radius: .75em 0;
+	
+	padding: .5em 1em;
+	border: 2px solid transparent;
+	min-width: 10ch;
+	//min-height: 40px;
+	text-align: center;
+	line-height: 1.1;
+	font-weight: bold;
+	
+	transition: 220ms all ease;
+	
+	position: relative;
+	// curved box shadow using before element
+	// https://www.fourfront.us/blog/css-shadow-borders-with-curved-box-shadows/
+	&:before {
+        content: ""; 
+        position:absolute; 
+        z-index: -1; 
+        inset: 0; 
+        border-radius: 50%;
+    }
+	
+
+	&:hover,
+	&:active{
+		background-color: var(--btn-color);
+		color: var(--btn-background);
+		
+		&:before {
+			box-shadow:0 5px 10px rgba(0,0,0,0.3); 
+		}
+	
+	}
+	&.focus,
+	&:focus {
+		outline-style: solid;
+		outline-color: transparent;
+		box-shadow:
+			inset 0 0 0 3px #fff,
+			0 0 0 3px var(--btn-focus),
+            0 1px 1px hsl(0deg 0% 0% / 0.075),
+            0 2px 2px hsl(0deg 0% 0% / 0.075),
+            0 4px 4px hsl(0deg 0% 0% / 0.075)
+		;
+
+	}
+
+	&-inverted {
+		--btn-background: #53565a;
+  	    --btn-color: #dcdadb;
+	}
+
+    &--small {
+		font-size: 80%;
+	}
+	&--large {
+		font-size: 120%;
+	}
+	&--block {
+		width: 100%;
+	}
+
+    &--outlined {
+        --btn-focus: var(--btn-color);
+        border-color: var(--btn-color);
+    }
+
+
+	&--header {
+		--btn-background: #dcdadb;
+		border-radius: 0 0 .75rem .75rem;
+		
+		&:hover,
+		&:active {
+			--btn-color: #dcdadb;
+			--btn-background: #222;
+			box-shadow:
+                0 1px 1px hsl(0deg 0% 0% / 0.075),
+                0 2px 2px hsl(0deg 0% 0% / 0.075),
+                0 4px 4px hsl(0deg 0% 0% / 0.075)
+  		    ;
+		}
+		&.focus,
+		&:focus {
+			--btn-focus: #dcdadb;
+		}
+	}
+	
+}
+

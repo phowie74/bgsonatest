@@ -28,11 +28,11 @@ if (is_object($rcobj[1])) {
 <?php $view->inc('elements/header.php'); ?>
 <main id="main_content">
 <?php $a = new Area('Page Header'); $a->display($c); ?>
-<div class="layout-flex padded">
+<div class="wrapper padded layout-flex">
   <div class="content flow"><?php $a = new Area('Intro'); $a->display($c); ?></div>
   <div class="flow"><?php $a = new Area('Piccy'); $a->display($c); ?></div>
 </div>
-<div class="layout-flex divider padded">
+<div class="wrapper divider padded layout-flex">
   <div class="content flow"><?php $a = new Area('Main'); $a->display($c); ?></div>
   <div class="flow"><?php $a = new Area('Sidebar'); $a->display($c); ?></div>
 </div>
