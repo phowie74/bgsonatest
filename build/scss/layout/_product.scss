@@ -1,0 +1,67 @@
+
+.layout-flex.product {
+    --gap: 2rem;
+	flex-wrap: nowrap;
+
+    > * {
+        display: block;
+        flex: 1 1 auto;
+        align-self: auto;
+        order: 0;
+    }
+    > .product-menu {
+        display: block;
+        flex: 0 0 60px;
+        order: 1;
+        text-align: right;
+    }
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 100px;
+}
+
+.ccm-page ul.sticky-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+
+    li {
+	    position: relative;
+	    height: 2.5rem;
+    }
+    li a.reveal {
+	    position: absolute;
+	    inset: 0 0 0 auto;
+	    color: #333;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #dcdadb;
+        padding: 0.5rem;
+        margin-bottom: 1px;
+        white-space: nowrap;
+    
+        i {
+            min-width: 30px;
+        }
+        span {
+	        display: inline-block;
+            max-width: 0;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            vertical-align: middle;
+            padding-left: 0.5rem;
+        }
+
+        &:hover {
+            background-color: #fedd00;
+
+            span {
+                max-width: 100vw;
+            }
+
+        }
+    }
+}

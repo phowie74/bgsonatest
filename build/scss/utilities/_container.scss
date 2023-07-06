@@ -1,3 +1,13 @@
+@use "../abstracts" as *;
 .wrapper {
     padding-inline: max(1rem, 50vw - 600px);
+}
+.padded {
+	padding-block: var(--padded, 2rem);
+}
+.divider,
+.border {
+	border-top: 1px dashed $gray-lighter;
+    //margin-block-start: var(--padded, 2rem);
+    padding-block: var(--padded, 2rem);
 }

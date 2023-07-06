@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+.card {
+    --card-background: #fff;
+    --card-gutter: 1rem;
+	
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: var(--card-background);
+    height: 100%;
+    padding-bottom: var(--card-gutter);
+    position: relative;
+    transition: all 0.5s ease-in-out;
+	
+	border-bottom-right-radius: 1rem;
+	
+	&:hover {
+		box-shadow: 0 14px 28px rgba(0,0,0,0.08),0 10px 10px rgba(0,0,0,0.04);
+	}
+	
+	
+	.card-image {
+		position: relative;
+        overflow: hidden;
+		aspect-ratio: 8 / 5;
+		
+		img {
+    	    filter: grayscale(0);
+    	    transition: all 0.5s ease-in-out;
+		}
+	}
+	&:hover .card-image img {
+		transform: scale(1.05);
+        filter: grayscale(0);
+	}
+	
+	.card-content {
+		margin-inline: var(--card-gutter);
+		
+		.h3 + .text-small,
+        .h2 + .text-small {
+			margin-top: 0;
+		}
+	}
+	&.card--centred .card-content {
+		text-align: center;
+	}
+	
+}
+
+.layout-grid:hover > .card:not(:hover) .card-image img {
+	filter: grayscale(100%);
+	opacity: 0.8;
+}

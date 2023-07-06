@@ -17,8 +17,9 @@ button.btn { // buttons
 
 a.btn,
 button.btn {
-	--btn-background: #dcdadb;
-    --btn-color: #53565a;
+	--btn-background: $brand-primary;
+    --btn-color: $brand-secondary;
+	;
 	//--btn-background-hover: var(--color-on-#{$button-default-color});
 	//--btn-color-hover: var(--color-#{$button-default-color});
 	--btn-focus: var(--btn-background);
@@ -107,6 +108,10 @@ button.btn {
 		&:active {
 			--btn-color: #dcdadb;
 			--btn-background: #222;
+
+            //background-color: #fedd00;
+            //color: #53565a
+
 			box-shadow:
                 0 1px 1px hsl(0deg 0% 0% / 0.075),
                 0 2px 2px hsl(0deg 0% 0% / 0.075),
