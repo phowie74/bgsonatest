@@ -1,5 +1,6 @@
 @use "../abstracts" as *;
 
+.ccm-page {
 a.btn { // link buttons
 	text-decoration: none;
 }
@@ -17,8 +18,8 @@ button.btn { // buttons
 
 a.btn,
 button.btn {
-	--btn-background: $brand-primary;
-    --btn-color: $brand-secondary;
+	--btn-background: #{$brand-primary};
+    --btn-color: #{$brand-secondary};
 	;
 	//--btn-background-hover: var(--color-on-#{$button-default-color});
 	//--btn-color-hover: var(--color-#{$button-default-color});
@@ -125,4 +126,4 @@ button.btn {
 	}
 	
 }
-
+}

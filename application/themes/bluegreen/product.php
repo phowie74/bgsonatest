@@ -90,61 +90,66 @@ if (!empty($c->getAttribute('thumbnail'))) {
 <body>
 <div class="<?=$c->getPageWrapperClass()?>">
 <a href="#main_content" class="visually-hidden">Skip to content</a>
-<?php $view->inc('elements/header.php'); ?>
+<?php $view->inc('elements/header.php'); ?> 
 <main id="main_content">
 <?php $a = new Area('Page Header'); $a->display($c); ?>
+
+
 <div class="wrapper padded layout-flex">
-  <div class="content flow"><?php $a = new Area('Intro'); $a->display($c); ?></div>
+  <div class="content flow">
+<?php $a = new Area('Intro'); $a->display($c); ?>
+<form action="" method="get">
+<input name="Question29" type="hidden" value="<?php echo $c->getCollectionName(); ?>">
+<p><button type="submit" class="btn">Request a quote</button></p>
+</form>
+  </div>
   <div class="flow">
 <?php $a = new Area('Piccy'); $a->display($c); ?>
-<form action="/contact/request-quote/" method="get">
-<input name="Question29" type="hidden" value="<?php echo $c->getCollectionName(); ?>">
-<p><button type="submit" class="btn btn-sonatest">Request a quote</button></p>
-</form>
   </div>
 </div>
 
 
 <div class="wrapper padded divider">
-<div class="layout-flex product">
+  <div class="layout-flex product">
 		<div class="product-menu">
 <ul class="sticky-nav">
-	<li class=""><a href="#overview" class="reveal"><i class="fa fa-home"></i><span>Overview</span></a></li>
+<li class=""><a href="#overview" class="reveal"><i class="fa fa-home"></i><span>Overview</span></a></li>
 <?php echo $jumpmenu; ?>
 <li class=""><a href="#quote" class="reveal"><i class="fa fa-quote-left"></i><span>Request&nbsp;a&nbsp;Quote</span></a></li>
-</ul>	
-		</div>
-		<div>
-
-<section id="overview">
-  <h3>Overview</h3>
+</ul>
+    </div>
+    <div>
+    <section id="overview">
   <div class="layout-flex">
-  <div class="content flow"><?php $a = new Area('Main'); $a->display($c); ?></div>
-  <div class="flow"><?php $a = new Area('Sidebar'); $a->display($c); ?></div>
-  <div class="full-width flow"><?php $a = new Area('Overview'); $a->display($c); ?></div>
+    <div class="flex-full flow"><h3>Overview</h3></div>
+    <div class="content flow"><?php $a = new Area('Main'); $a->display($c); ?></div>
+    <div class="flow"><?php $a = new Area('Sidebar'); $a->display($c); ?></div>
+    <div class="flex-full flow"><?php $a = new Area('Overview'); $a->display($c); ?></div>
 </div>
 	<hr>
 	<p class="text-muted text-small"><a href="#overview">[BACK TO TOP]</a></p>
 </section>
-
 <hr class="full-width">
 <?php if (($feat->getTotalBlocksInArea($c) > 0 ) || ($c->isEditMode())) { ?>
 <section id="features">
-  <h3>Features</h3>
   <div class="layout-flex">
-  <div class="full-width flow"><?php $feat->display($c); ?></div>	
-</div>
+  <div class="flex-full flow"><h3>Features</h3></div>
+  <div class="content flow"><?php $feat->display($c); ?></div>
+  <div class="flow"><?php $a = new Area('Features Side'); $a->display($c); ?></div>
+  <div class="flex-full flow"><?php $a = new Area('Full Width'); $a->display($c); ?></div>
+  </div>
 	<hr>
 	<p class="text-muted text-small"><a href="#overview">[BACK TO TOP]</a></p>	
 </section>
 <hr class="full-width">
 <?php } ?>
-
 <?php if (($spec->getTotalBlocksInArea($c) > 0 ) || ($c->isEditMode())) { ?>
 <section id="specification">
-  <h3>Specification</h3>
   <div class="layout-flex">
-  <div class="full-width flow"><?php $spec->display($c); ?></div>	
+  <div class="flex-full flow">
+  <h3>Specification</h3>  
+  <?php $spec->display($c); ?>
+  </div>	
   </div>	
 	<hr>
 	<p class="text-muted text-small"><a href="#overview">[BACK TO TOP]</a></p>
@@ -153,9 +158,11 @@ if (!empty($c->getAttribute('thumbnail'))) {
 <?php } ?>
 <?php if (($rsrc->getTotalBlocksInArea($c) > 0 ) || ($c->isEditMode())) { ?>
 <section id="resources">
-  <h3>Resources</h3>
   <div class="layout-flex">
-  <div class="full-width flow"><?php $rsrc->display($c); ?></div>	
+  <div class="flex-full flow">
+  <h3>Resources</h3>
+    <?php $rsrc->display($c); ?>
+  </div>	
   </div>
 	<hr>
 	<p class="text-muted text-small"><a href="#overview">[BACK TO TOP]</a></p>
@@ -164,9 +171,11 @@ if (!empty($c->getAttribute('thumbnail'))) {
 <?php } ?>
 <?php if (($acce->getTotalBlocksInArea($c) > 0 ) || ($c->isEditMode())) { ?>
 <section id="accessories">
-  <h3>Accessories</h3>
   <div class="layout-flex">
-  <div class="full-width flow"><?php $acce->display($c); ?></div>	
+  <div class="flex-full flow">
+  <h3>Accessories</h3>
+  <?php $acce->display($c); ?>
+</div>	
   </div>
 	<hr>
 	<p class="text-muted text-small"><a href="#overview">[BACK TO TOP]</a></p>
@@ -175,23 +184,34 @@ if (!empty($c->getAttribute('thumbnail'))) {
 <?php } ?>
 <?php if (($down->getTotalBlocksInArea($c) > 0 ) || ($c->isEditMode())) { ?>
 <section id="downloads">
-  <h3>Downloads</h3>
   <div class="layout-flex">
-  <div class="full-width flow"><?php $down->display($c); ?></div>	
+  <div class="flex-full flow">
+  <h3>Downloads</h3>
+  <?php $down->display($c); ?>
+  </div>	
   </div>
 	<hr>
 	<p class="text-muted text-small"><a href="#overview">[BACK TO TOP]</a></p>
 </section>
 <hr class="full-width">
 <?php } ?>
-		</div>
     </div>
-	</div>
-  <form action="/contact/request-quote/" method="get">
+
+  </div>
+</div>
+  
+<div class="wrapper padded">
+<form action="" method="get">
 <input name="Question29" type="hidden" value="<?php echo $c->getCollectionName(); ?>">
 <p class="text-center"><button type="submit" class="btn">Request a quote</button></p>
 </form>
-<?php $a = new Area('Page Footer'); $a->display($c); ?>
+</div>
+
+<div class="wrapper padded divider">
+  <div class="layout-flex">
+    <div class="flex-full"<?php $a = new Area('Page Footer'); $a->display($c); ?></div>
+  </div>
+
 </main>
 <?php $view->inc('elements/footer.php'); ?>
 </div>

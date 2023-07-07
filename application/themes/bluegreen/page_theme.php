@@ -15,7 +15,7 @@ class PageTheme extends Theme implements ThemeProviderInterface {
     }
 
     public function registerAssets() {  
-        //$this->requireAsset('css', 'font-awesome');
+        $this->requireAsset('css', 'font-awesome');
         $this->requireAsset("javascript", "jquery");
         $this->requireAsset("javascript", "picturefill");
         //$this->requireAsset("core/lightbox");
@@ -128,7 +128,7 @@ class PageTheme extends Theme implements ThemeProviderInterface {
             array(
                 'handle' => '2col',
                 'name' => '2 Column',
-                'container' => '<div class="layout-flex"></div>',
+                'container' => '<div class="layout-flex" style="--gap: 2.5rem;"></div>',
                 'columns' => array(
                     '<div class="stack"></div>',
                     '<div class="stack"></div>'

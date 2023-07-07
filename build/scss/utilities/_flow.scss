@@ -1,3 +1,5 @@
-.flow > * + * {
+.flow > * + *,
+.ccm-block-edit > * + *,
+.cke-editable {
     margin-top: var(--flow-spacer, 1em);
 }

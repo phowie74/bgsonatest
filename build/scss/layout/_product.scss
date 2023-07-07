@@ -12,6 +12,7 @@
     > .product-menu {
         display: block;
         flex: 0 0 60px;
+        min-width: 60px;
         order: 1;
         text-align: right;
     }
@@ -45,6 +46,7 @@
     
         i {
             min-width: 30px;
+            vertical-align: middle;
         }
         span {
 	        display: inline-block;

@@ -23,7 +23,7 @@ if (strpos($small2x, $findme)) {
     }
     echo '<!--[if IE 9]></video><![endif]-->';
 }
-    echo '<img src="'.$small.'" alt="'.h($title).'" class="ccm-image-block">';
+    echo '<img src="'.$small.'" alt="'.h($c->getCollectionName()).'" class="ccm-image-block">';
 if (strpos($small2x, $findme)) {
     echo '</picture>';
 }
