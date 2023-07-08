@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .layout-flex {
-    --gap: 1rem;
+    --gap: 2rem;
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--gap);
@@ -16,6 +16,9 @@
 	> * {
 		flex: 1 1 0;
     	min-width: 250px;
+	}
+	*.flex-smaller > * {
+		min-width: 70px;
 	}
 	> .flex-full {
 		flex-basis: 100%;

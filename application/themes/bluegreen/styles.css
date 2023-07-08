@@ -381,6 +381,53 @@ nav.js-menu #main-nav {
   box-shadow: none;
 }
 
+/* Dropdowns */
+#main-nav ul {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  display: none;
+  z-index: 150;
+}
+
+#main-nav li li {
+  display: block;
+}
+
+#main-nav li li a,
+#main-nav li li a:link,
+#main-nav li li a:visited {
+  border-bottom: 1px dashed #dcdadb;
+  color: #939395;
+  font-size: 0.8rem;
+}
+
+#main-nav li li a:hover,
+#main-nav li li a:active,
+#main-nav li li a:focus {
+  background: #dcdadb;
+  color: #53565a;
+}
+
+@media screen and (min-width: 30em) {
+  #main-nav ul {
+    background: #939395;
+    border-top: 3px solid #fedd00;
+    position: absolute;
+    width: 250px;
+  }
+  #main-nav li li a,
+  #main-nav li li a:link,
+  #main-nav li li a:visited {
+    color: #fff;
+  }
+  #main-nav li li a:hover,
+  #main-nav li li a:active,
+  #main-nav li li a:focus {
+    background: #53565a;
+    color: #fedd00;
+  }
+}
 .ccm-page a.btn {
   text-decoration: none;
 }
@@ -519,6 +566,14 @@ nav.js-menu #main-nav {
 .card .card-content .h2 + .text-small {
   margin-top: 0;
 }
+.card .card-content a.card-link:after {
+  position: absolute;
+  display: block;
+  content: "";
+  inset: 0;
+  z-index: 1;
+  pointer-events: auto;
+}
 .card.card--centred .card-content {
   text-align: center;
 }
@@ -531,7 +586,7 @@ nav.js-menu #main-nav {
 .pull-left {
   max-width: 25%;
   height: auto;
-  float: right;
+  float: left;
   margin: 0 2rem 1rem 0;
 }
 
@@ -547,6 +602,14 @@ nav.js-menu #main-nav {
   content: "";
   clear: both;
   display: table;
+}
+
+.center-block {
+  margin-inline: auto;
+}
+
+.ccm-page iframe {
+  border: 0;
 }
 
 .layout-flex > .login {
@@ -816,7 +879,7 @@ footer .layout-flex.highlight > * {
 }
 
 .layout-flex {
-  --gap: 1rem;
+  --gap: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
@@ -830,6 +893,9 @@ footer .layout-flex.highlight > * {
 .layout-flex > * {
   flex: 1 1 0;
   min-width: 250px;
+}
+.layout-flex *.flex-smaller > * {
+  min-width: 70px;
 }
 .layout-flex > .flex-full {
   flex-basis: 100%;
@@ -921,6 +987,10 @@ footer .layout-flex.highlight > * {
   grid-column: 1/-1;
 }
 
+.layout-grid.grid25 {
+  grid-template-columns: repeat(auto-fit, minmax(14em, 30%));
+}
+
 .list-plain,
 .list-inline {
   margin: 0;
@@ -998,6 +1068,73 @@ footer .layout-flex.highlight > * {
 }
 .padding-inline-lg {
   padding-inline: 2rem;
+}
+
+.ccm-page {
+  /* Consider removing this next declaration block, as it causes problems when
+  there's a rowspan on the first cell. Case added to the tests. issue#432 */
+}
+.ccm-page table {
+  /* Remove spacing between table cells (from Normalize.css) */
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #939395;
+  margin: 0;
+}
+.ccm-page table caption {
+  color: #939395;
+  font-style: italic;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+.ccm-page table tr {
+  border-bottom: 1px solid #939395;
+}
+.ccm-page table tr:last-child {
+  border-bottom-width: 0;
+}
+.ccm-page tr:nth-child(even) {
+  background: #dcdadb;
+}
+.ccm-page table td,
+.ccm-page table th {
+  border-left: 1px solid #939395; /*  inner column border */
+  border-width: 0 0 0 1px;
+  font-size: inherit;
+  margin: 0;
+  overflow: visible; /*to make ths where the title is really long work*/
+  padding: 0.25rem; /* cell padding */
+  text-align: left;
+}
+.ccm-page th {
+  font-weight: 700;
+  color: #fff;
+  background-color: #53565a;
+}
+.ccm-page table td:first-child,
+.ccm-page table th:first-child {
+  border-left-width: 0;
+}
+.ccm-page thead {
+  background-color: #53565a;
+  color: #fff;
+  text-align: left;
+  vertical-align: bottom;
+}
+.ccm-page .table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ccm-page .table-responsive > table {
+  min-width: 100%;
+}
+
+.ccm-page img.ccm-generic-thumbnail {
+  width: 40px;
+  height: auto;
 }
 
 .visually-hidden,

@@ -43,6 +43,18 @@
         .h2 + .text-small {
 			margin-top: 0;
 		}
+
+		a.card-link {
+
+			&:after {
+				position: absolute;
+				display: block;
+				content: '';
+				inset: 0;
+				z-index: 1;
+				pointer-events: auto;
+			}
+		}
 	}
 	&.card--centred .card-content {
 		text-align: center;

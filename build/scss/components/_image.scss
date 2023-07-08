@@ -3,7 +3,7 @@
 .pull-left {
     max-width: 25%;
     height: auto;
-    float: right;
+    float: left;
     margin: 0 2rem 1rem 0;
 }
 .pull-right {
@@ -17,4 +17,7 @@
     content: "";
     clear: both;
     display: table;
+}
+.center-block {
+    margin-inline: auto;
 }

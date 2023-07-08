@@ -31,7 +31,7 @@ if (($acce->getTotalBlocksInArea($c) > 0 ) || ($c->isEditMode())) {
   $jumpmenu .= '<li><a href="#accessories" class="reveal"><i class="fa fa-plus-square"></i><span>Accessories</span></a></li>';
 }
 $down = new Area('Downloads');
-if (($acce->getTotalBlocksInArea($c) > 0 ) || ($c->isEditMode())) {
+if (($down->getTotalBlocksInArea($c) > 0 ) || ($c->isEditMode())) {
   $jumpmenu .= '<li><a href="#downloads" class="reveal"><i class="fa fa-download"></i><span>Downloads</span></a></li>';
 }
 //$full = new Area('Full Width');
@@ -209,7 +209,10 @@ if (!empty($c->getAttribute('thumbnail'))) {
 
 <div class="wrapper padded divider">
   <div class="layout-flex">
-    <div class="flex-full"<?php $a = new Area('Page Footer'); $a->display($c); ?></div>
+    <div class="flex-full flow">
+      <p class="h3">Related Products...</p>
+      <?php $a = new Area('Page Footer'); $a->display($c); ?>
+    </div>
   </div>
 
 </main>

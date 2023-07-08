@@ -84,3 +84,47 @@ nav.js-menu #main-nav {
     background: $brand-primary;
     box-shadow: none;
 }
+
+
+/* Dropdowns */
+#main-nav ul {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    display: none;
+    z-index: 150;
+  }
+  #main-nav li li { display: block; }
+  #main-nav li li a,
+  #main-nav li li a:link,
+  #main-nav li li a:visited {
+    border-bottom: 1px dashed $gray-lighter;
+    color: $gray;
+    font-size: 0.8rem;
+  }
+  #main-nav li li a:hover,
+  #main-nav li li a:active,
+  #main-nav li li a:focus {
+    background: $gray-lighter;
+    color: $brand-secondary;
+  }
+  
+  @include mq(small) {
+    #main-nav ul {
+      background: $gray;
+      border-top: 3px solid $brand-primary;
+      position: absolute;
+      width: 250px;
+    }
+    #main-nav li li a,
+    #main-nav li li a:link,
+    #main-nav li li a:visited {
+      color: #fff;//$gray-lighter;
+    }
+    #main-nav li li a:hover,
+    #main-nav li li a:active,
+    #main-nav li li a:focus {
+      background: $brand-secondary;
+      color: $brand-primary;
+    }
+}

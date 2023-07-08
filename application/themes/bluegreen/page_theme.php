@@ -121,17 +121,17 @@ class PageTheme extends Theme implements ThemeProviderInterface {
                 'name' => 'Default 2 Column',
                 'container' => '<div class="layout-flex"></div>',
                 'columns' => array(
-                    '<div class="content stack"></div>',
-                    '<div class="stack"></div>'
+                    '<div class="content flow"></div>',
+                    '<div class="flow"></div>'
                 ),
             ),
             array(
                 'handle' => '2col',
                 'name' => '2 Column',
-                'container' => '<div class="layout-flex" style="--gap: 2.5rem;"></div>',
+                'container' => '<div class="layout-flex"></div>',
                 'columns' => array(
-                    '<div class="stack"></div>',
-                    '<div class="stack"></div>'
+                    '<div class="flow"></div>',
+                    '<div class="flow"></div>'
                 ),
             ),
             array(
@@ -139,20 +139,20 @@ class PageTheme extends Theme implements ThemeProviderInterface {
                 'name' => '3 Column',
                 'container' => '<div class="layout-flex"></div>',
                 'columns' => array(
-                    '<div class="stack"></div>',
-                    '<div class="stack"></div>',
-                    '<div class="stack"></div>'
+                    '<div class="flow"></div>',
+                    '<div class="flow"></div>',
+                    '<div class="flow"></div>'
                 ),
             ),
             array(
                 'handle' => '4col',
                 'name' => '4 Column',
-                'container' => '<div class="layout-flex"></div>',
+                'container' => '<div class="layout-flex flex-smaller"></div>',
                 'columns' => array(
-                    '<div class="stack"></div>',
-                    '<div class="stack"></div>',
-                    '<div class="stack"></div>',
-                    '<div class="stack"></div>'
+                    '<div class="flow"></div>',
+                    '<div class="flow"></div>',
+                    '<div class="flow"></div>',
+                    '<div class="flow"></div>'
                 ),
             ),
             array(
@@ -160,7 +160,7 @@ class PageTheme extends Theme implements ThemeProviderInterface {
                 'name' => 'Single Column',
                 'container' => '<div class="wrapper"></div>',
                 'columns' => array(
-                    '<div class="stack"></div>'
+                    '<div class="flow"></div>'
                 ),
             ),
             array(
@@ -168,7 +168,7 @@ class PageTheme extends Theme implements ThemeProviderInterface {
                 'name' => 'Single Column (Full Width)',
                 'container' => '<div class="wrapper-full"></div>',
                 'columns' => array(
-                    '<div class="stack"></div>'
+                    '<div class="flow"></div>'
                 ),
             ),
         );

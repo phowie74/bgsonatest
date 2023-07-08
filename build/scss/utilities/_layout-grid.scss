@@ -6,4 +6,7 @@
     > .grid-full {
       grid-column: 1/-1;
     }
-  }
+}
+.layout-grid.grid25 {
+  grid-template-columns: repeat(auto-fit, minmax(14em, 30%));
+}
