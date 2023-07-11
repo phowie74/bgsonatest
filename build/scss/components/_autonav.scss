@@ -128,3 +128,60 @@ nav.js-menu #main-nav {
       color: $brand-primary;
     }
 }
+
+.ccm-page {
+  ul.subnav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      padding: 0;
+      margin-bottom: 3px;
+
+      > span,
+      > a {
+        display: block;
+        padding: 0.5rem;
+      }
+
+      > span {
+        background-color: $brand-secondary;
+        color: #FFF;
+        font-weight: $fw-700;
+      }
+
+      > a {
+        background-color: $gray-lighter;
+        color: $brand-secondary;
+        transition: background-color .3s;
+
+        &:hover {
+          background-color: #FFF;
+          box-shadow: none;
+        }
+      }
+    }
+
+    & ul {
+      display: none;
+      padding: 0;
+    }
+    & li.show ul {
+      display: block;
+    }
+    & ul > li > a {
+      color: $brand-secondary;
+      display: block;
+      font-weight: normal;
+      padding: 0.5rem;
+
+      &:hover {
+        background-color: $gray-lighter;
+      }
+    }
+    & ul > li:not(:last-child) > a {
+      border-bottom: 1px dashed $gray;
+    }
+  }
+}

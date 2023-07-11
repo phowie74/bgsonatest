@@ -8,18 +8,21 @@
         "build:scss": "sass --no-source-map build/scss:build/",
         "build:js": "uglifyjs-folder build/js/ -eo application/themes/bluegreen/js",
         "copy:css": "copyfiles -u 2 'build/css/styles.css' 'application/themes/bluegreen/'",
+        "copy:map": "copyfiles -u 2 'build/css/styles.css.map' 'application/themes/bluegreen/'",
         "copy:js": "copyfiles -u 2 'build/js/scripts.js' 'application/themes/bluegreen/js/'",
         "copy": "npm-run-all --parallel copy:*",
         "watch:scss": "sass --watch build/scss:build/css",
         "watch:guide": "sass --watch build/styleguide:build/styleguide",
         "watch:css": "onchange 'build/css/styles.css' -- npm run copy:css",
+        "watch:map": "onchange 'build/css/styles.css.map' -- npm run copy:map",
+        "watch:cssmin": "onchange 'application/themes/bluegreen/styles.css' -- npm run postbuild",
         "watch:js": "onchange 'build/js/scripts.js' -- npm run copy:js",
         "watch:jsmin": "onchange 'application/themes/bluegreen/scripts.js' -- npm run build:js",
         "watch": "npm-run-all --parallel watch:*",
         "serve": "browser-sync start --server build/ --index index.htm --startPath styleguide/ --files ['build/styleguide/*', 'build/js/*', 'build/css/*']",
         "start": "npm-run-all --parallel watch serve",
         "build": "npm-run-all build:*",
-        "postbuild": "postcss application/themes/bluegreen/*.css -u autoprefixer cssnano -r --no-map"
+        "postbuild": "postcss application/themes/bluegreen/styles.css -o application/themes/bluegreen/styles-min.css -u autoprefixer cssnano --no-map"
     },
     "dependencies": {
         "autoprefixer": "^10.4.2",

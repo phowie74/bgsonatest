@@ -428,6 +428,54 @@ nav.js-menu #main-nav {
     color: #fedd00;
   }
 }
+.ccm-page ul.subnav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ccm-page ul.subnav > li {
+  padding: 0;
+  margin-bottom: 3px;
+}
+.ccm-page ul.subnav > li > span,
+.ccm-page ul.subnav > li > a {
+  display: block;
+  padding: 0.5rem;
+}
+.ccm-page ul.subnav > li > span {
+  background-color: #53565a;
+  color: #FFF;
+  font-weight: 700;
+}
+.ccm-page ul.subnav > li > a {
+  background-color: #dcdadb;
+  color: #53565a;
+  transition: background-color 0.3s;
+}
+.ccm-page ul.subnav > li > a:hover {
+  background-color: #FFF;
+  box-shadow: none;
+}
+.ccm-page ul.subnav ul {
+  display: none;
+  padding: 0;
+}
+.ccm-page ul.subnav li.show ul {
+  display: block;
+}
+.ccm-page ul.subnav ul > li > a {
+  color: #53565a;
+  display: block;
+  font-weight: normal;
+  padding: 0.5rem;
+}
+.ccm-page ul.subnav ul > li > a:hover {
+  background-color: #dcdadb;
+}
+.ccm-page ul.subnav ul > li:not(:last-child) > a {
+  border-bottom: 1px dashed #939395;
+}
+
 .ccm-page a.btn {
   text-decoration: none;
 }
