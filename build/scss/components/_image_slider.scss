@@ -52,27 +52,34 @@
   
   
   /* !--Basic Theme (Animation) */
-  // text
-  .homslides p {
- //   transform: translateX(50%);
- //   opacity: 0;
- //   transition: all .5s 1s ease;
-  }
-  .homslides p.h2 {
- //   transform: translateX(0) translateY(-200%);
- //   transition-delay: .3s;
-  }
-  .homslides p:last-child {
- //   transition-delay: .6s;
-  }
-  .homslides .homslides1_on p,
-  .homslides .homslides1_on p:last-child {
- //   transform: translateX(0); 
- //   opacity: 1;
-  }
-  .homslides .homslides1_on p.h2 {
-  //  transform: translateX(0) translateY(0);
-  }
+  .homslides li figcaption{
+	
+	> p {
+		transform: translatex(-200%);
+		opacity: 0;
+		transition: transform .3s ease;
+		
+		a.btn:hover {
+			background-color: #FFF;
+			color: #444;
+		}
+	}
+
+}
+.homslides li.homslides1_on figcaption {
+	
+	> p {
+		transform: translatex(0);
+		opacity: 1;
+		transition-delay: .6s;
+	}
+	> p.h2 {
+		transition-delay: .3s;
+	}
+	> p:last-child {
+		transition-delay: .9s;
+	}
+}
   
   
   @include mq(small) {
@@ -100,4 +107,31 @@
         text-shadow:none;
       }
     }
+    .homslides li figcaption{
+        transform: translatex(-100%);
+        transition: transform .4s ease;
+    }
+
+    .homslides li.homslides1_on figcaption {
+        transform: translatex(0);
+    }
+
   }
+
+
+
+.homslides li.homslides1_on figcaption {
+	transform: translatex(0);
+	
+	> p {
+		transform: translatex(0);
+		opacity: 1;
+		transition-delay: .6s;
+	}
+	> p.h2 {
+		transition-delay: .3s;
+	}
+	> p:last-child {
+		transition-delay: .9s;
+	}
+}
