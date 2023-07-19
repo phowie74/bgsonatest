@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+.ccm-page {
+
+    form.search-box {
+        display: flex;
+        flex-wrap: nowrap;
+            
+        input[type="search"] {
+            line-height: 1.5rem;
+            padding: 0.25rem .5rem;
+            margin: 0;
+            width: 100%;
+                    
+            border: 2px solid $gray-darker;
+            border-radius: 0;
+                    
+            &:focus-visible {
+                outline: 2px solid $brand-primary;
+            }
+        }
+        button.btn {
+            line-height: 1.5rem;
+            padding: 0.25rem .5rem;
+            margin: 0;
+            min-width: 2rem;
+            border-top-left-radius: 0;
+            background-color: $gray-darker;
+            color: $brand-primary;
+                    
+            &:hover {
+                color: $gray-darker;
+                background-color: $brand-primary;
+            }
+        }
+            
+    }
+}
+

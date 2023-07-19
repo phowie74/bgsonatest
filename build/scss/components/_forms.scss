@@ -1,0 +1,177 @@
+@use "../abstracts" as *;
+
+/* Forms - Primitive CSS https://taniarascia.github.io/primitive/index.html
+  =============== */
+
+  .ccm-page {
+
+    [type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea,
+    .form-control {
+      display: block;
+      border: 2px solid $gray;
+      border-radius: 0;/*4px;*/
+      padding: 5px;/*.75rem*/;
+      outline: none;
+      background-color: #fff !important;
+      margin-bottom: .5rem;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 100%;
+      /*line-height: 1; */
+    
+    font-family: $ff-sans;
+    font-weight: $fw-400;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    
+    ::-webkit-input-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder,
+    :-moz-placeholder { /* Firefox 18- */
+    font-family: $ff-sans;/*$font-secondary;*/
+    font-weight: $fw-400;
+    }
+    
+    
+    [type=color]:hover, [type=date]:hover, [type=datetime]:hover, [type=datetime-local]:hover, [type=email]:hover, [type=month]:hover, [type=number]:hover, [type=password]:hover, [type=search]:hover, [type=tel]:hover, [type=text]:hover, [type=url]:hover, [type=week]:hover, [type=time]:hover, select:hover, textarea:hover {
+      border: 2px solid $gray-darker; }
+    
+    [type=color]:focus, [type=color]:active, [type=date]:focus, [type=date]:active, [type=datetime]:focus, [type=datetime]:active, [type=datetime-local]:focus, [type=datetime-local]:active, [type=email]:focus, [type=email]:active, [type=month]:focus, [type=month]:active, [type=number]:focus, [type=number]:active, [type=password]:focus, [type=password]:active, [type=search]:focus, [type=search]:active, [type=tel]:focus, [type=tel]:active, [type=text]:focus, [type=text]:active, [type=url]:focus, [type=url]:active, [type=week]:focus, [type=week]:active, [type=time]:focus, [type=time]:active, select:focus, select:active, textarea:focus, textarea:active {
+      border: 2px solid $gray-darker;
+    /*  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px $brand-primary;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px $brand-primary; */}
+    
+    textarea {
+      overflow: auto;
+      height: auto; }
+    
+    fieldset {
+    //  border: 1px solid #dedede;
+    //  border-radius: 4px;
+    //  padding: 1rem;
+      margin: 0 0 1rem 0; }
+    
+    legend {
+      padding: 0 .5rem;
+      font-weight: $fw-700;; }
+    
+    select {
+      color: #404040;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==) right center no-repeat;
+      line-height: 1; }
+    
+    select::-ms-expand {
+      display: none; }
+    
+    [type=range] {
+      width: 100%; }
+    
+    label {
+      font-weight: 600;
+      max-width: 100%;
+    //  display: block;
+      margin: 1rem 0 .5rem; }
+    
+      @include mq(small) {
+      .split-form label {
+        text-align: right;
+        padding: 0 .5rem;
+        margin-bottom: 1rem; }
+    }
+    
+    input.has-error, input.has-error:hover, input.has-error:focus, input.has-error:active,
+    select.has-error,
+    select.has-error:hover,
+    select.has-error:focus,
+    select.has-error:active,
+    textarea.has-error,
+    textarea.has-error:hover,
+    textarea.has-error:focus,
+    textarea.has-error:active {
+      border: 1px solid #900;
+    /*  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px #f4cecf;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px #f4cecf; */}
+    
+    ::-webkit-input-placeholder,
+    ::-moz-placeholder,
+    :-moz-placeholder,
+    :-ms-input-placeholder {
+      color: $gray; }
+    
+    
+    
+    
+    
+        .search-control {
+        font-size: 0;
+      }
+      .search-control [type=search] {
+        display: inline-block;
+        font-size: 16px;
+        height: 46px;
+        line-height: 16px;
+        margin: 0;
+        padding: 10px;
+        -webkit-appearance: none;
+        width: 85%;
+        vertical-align: middle;
+      }
+      main .search-control {
+        margin-bottom: 1rem;
+      }
+      .search-control button {
+        border: 2px solid $gray;
+        border-left: none;
+        border-top-left-radius: 0;
+        display: inline-block;
+        font-size: 16px;
+        height: 46px;
+        line-height: 16px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        -webkit-appearance: none;
+        width: 15%;
+        vertical-align: middle;
+      }
+      .search-control button:hover {
+    
+      }
+    
+      ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $gray;
+        font-family: $ff-sans;
+        font-size: 16px;
+        font-weight: $fw-400;
+        line-height: 16px;
+        padding-top: 3px;
+      }
+      ::-moz-placeholder { /* Firefox 19+ */
+        color: $gray;
+        font-family: $ff-sans;
+        font-size: 16px;
+        font-weight: $fw-400;
+        line-height: 16px;
+        padding-top: 3px;
+      }
+      :-ms-input-placeholder { /* IE 10+ */
+        color: $gray;
+        font-family: $ff-sans;
+        font-size: 16px;
+        font-weight: $fw-400;
+        line-height: 16px;
+        padding-top: 3px;
+      }
+      :-moz-placeholder { /* Firefox 18- */
+        color: $gray;
+        font-family: $ff-sans;
+        font-size: 16px;
+        font-weight: $fw-400;
+        line-height: 16px;
+        padding-top: 3px;
+      }
+    
+    }

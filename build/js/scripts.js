@@ -10,6 +10,14 @@ $(function () {
         $(this).parent().toggleClass('active').find('ul').slideToggle().parent().siblings().removeClass('active').find('ul').slideUp();
         e.preventDefault();
     });
+    // date navigation
+	$('.list-group.list-toggle li:not(:first-child) .show').hide();
+	
+	$('.list-group.list-toggle .toggle').click(function(e) {
+		e.preventDefault();
+		$(this).siblings('ul').toggleClass('show').slideToggle('fast').parent().siblings().find('ul').removeClass('show').slideUp('fast');
+		
+	});
 });
 
 var logo = document.querySelector(".header-logo");

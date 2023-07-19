@@ -132,7 +132,7 @@ nav.js-menu #main-nav {
 .ccm-page {
   ul.subnav {
     list-style: none;
-    margin: 0;
+    margin-inline: 0;
     padding: 0;
 
     > li {
@@ -165,19 +165,31 @@ nav.js-menu #main-nav {
 
     & ul {
       display: none;
+      list-style: none;
+      margin-inline: 0;
       padding: 0;
     }
     & li.show ul {
       display: block;
     }
+    & ul li + li {
+      border-top: 1px dashed $gray;
+    }
     & ul > li > a {
       color: $brand-secondary;
       display: block;
       font-weight: normal;
+      font-size: 80%;
       padding: 0.5rem;
 
+      &.selected {
+        font-weight: $fw-700;
+      }
+
       &:hover {
-        background-color: $gray-lighter;
+        color: $gray;
+        background-color: #fff;
+        box-shadow: none;
       }
     }
     & ul > li:not(:last-child) > a {

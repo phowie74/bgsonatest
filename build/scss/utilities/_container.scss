@@ -11,3 +11,9 @@
     //margin-block-start: var(--padded, 2rem);
     padding-block: var(--padded, 2rem);
 }
+
+.narrow {
+    width: 90%;
+    max-width: 500px;
+    margin-inline: auto;
+}

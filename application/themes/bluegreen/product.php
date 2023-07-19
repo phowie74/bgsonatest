@@ -215,6 +215,64 @@ if (!empty($c->getAttribute('thumbnail'))) {
     </div>
   </div>
 
+
+<?php
+
+$relatedProducts = $c->getAttribute('related_products');
+
+if ($relatedProducts) { 
+   $products = $relatedProducts->getPages();
+
+   if (!empty($products)) {
+     
+      echo '<div class="layout-grid">';
+      echo '<div class="grid-full"><p class="h3">Related Products</p></div>';
+      foreach($products as $product) {
+          
+          echo '<div class="card card--centred">';
+          $thumbnail = $product->getAttribute('thumbnail');
+          if (is_object($thumbnail)) {
+          
+            echo '<div class="card-image">';
+            echo '<a href="' . \Concrete\Core\Support\Facade\Url::to($product) . '">';
+
+            $fv = $thumbnail->getApprovedVersion();
+            $sm = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('blog_entry_thumbnail');
+            $small = $fv->getThumbnailURL($sm->getBaseVersion());
+            $small2x = $fv->getThumbnailURL($sm->getDoubledVersion());
+            $findme = "thumbnails";
+            if (strpos($small2x, $findme)) {
+            echo '<picture>';
+            echo "<!--[if IE 9]><video style='display: none;'><![endif]-->";
+            if (strpos($small, $findme)) {
+              echo '<source srcset="'.$small;
+              if (strpos($small2x, $findme)) {
+                echo ', '.$small2x.' 2x';
+              } else {
+                echo ', '.$fv->getRelativePath().' 2x';
+              }
+              echo '" media="(min-width: 100px)">';
+            }
+            echo '<!--[if IE 9]></video><![endif]-->';
+          }
+          echo '<img src="'.$small.'" alt="'.h($product->getCollectionName()).'" class="ccm-image-block">';
+          if (strpos($small2x, $findme)) {
+            echo '</picture>';
+          }
+          echo '</a></div>';
+
+          }
+          echo '<div class="card-content flow">';
+          echo '<p class="h3"><a href="' . \Concrete\Core\Support\Facade\Url::to($product) . '">'. h($product->getCollectionName()). '</a></p>';
+
+        echo '</div></div>';
+      }
+      echo '</div>';
+   }
+}
+?>
+
+
 </main>
 <?php $view->inc('elements/footer.php'); ?>
 </div>

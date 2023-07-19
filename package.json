@@ -6,7 +6,7 @@
     "author": "phowie74",
     "scripts": {
         "build:scss": "sass --no-source-map build/scss:build/",
-        "build:js": "uglifyjs-folder build/js/ -eo application/themes/bluegreen/js",
+        "build:js": "uglifyjs application/themes/bluegreen/js/scripts.js -c -o application/themes/bluegreen/js/scripts.min.js",
         "copy:css": "copyfiles -u 2 'build/css/styles.css' 'application/themes/bluegreen/'",
         "copy:map": "copyfiles -u 2 'build/css/styles.css.map' 'application/themes/bluegreen/'",
         "copy:js": "copyfiles -u 2 'build/js/scripts.js' 'application/themes/bluegreen/js/'",
@@ -17,7 +17,7 @@
         "watch:map": "onchange 'build/css/styles.css.map' -- npm run copy:map",
         "watch:cssmin": "onchange 'application/themes/bluegreen/styles.css' -- npm run postbuild",
         "watch:js": "onchange 'build/js/scripts.js' -- npm run copy:js",
-        "watch:jsmin": "onchange 'application/themes/bluegreen/scripts.js' -- npm run build:js",
+        "watch:jsmin": "onchange 'application/themes/bluegreen/js/scripts.js' -- npm run build:js",
         "watch": "npm-run-all --parallel watch:*",
         "serve": "browser-sync start --server build/ --index index.htm --startPath styleguide/ --files ['build/styleguide/*', 'build/js/*', 'build/css/*']",
         "start": "npm-run-all --parallel watch serve",

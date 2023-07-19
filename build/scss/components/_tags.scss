@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+.ccm-page {
+.label,
+a.label {
+    background-color: $gray-darker;
+    color: #FFF;
+    padding: 0.25rem .5rem;
+    border-radius: 5px;
+    display: inline-block;
+    
+
+    &.selected {
+        font-weight: $fw-700;
+        background-color: $gray;
+    }
+}
+a.label:hover {
+    color: $brand-primary;
+}
+
+.list-inline .label {
+    margin-inline-end: .5rem;
+    margin-block-end: .5rem;
+}
+
+}

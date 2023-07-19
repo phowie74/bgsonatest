@@ -1,0 +1,103 @@
+@use "../abstracts" as *;
+
+/* !--ResponsiveSlides Foundation */
+.homslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .homslides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    /* EI11 */ top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0;
+  }
+  .homslides li:first-child {
+    display: block;
+  }
+  .homslides img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    border: 0;
+
+    aspect-ratio: 16 / 6;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* !--Basic Theme (Mobile) */
+  .homslides {
+    background: $brand-secondary;
+    color: #FFF;
+  }
+  .homslides figure {
+    position: relative;
+    margin: 0;
+  }
+  .homslides figcaption {
+    text-align: center;
+    padding: 1rem 4rem;
+  }
+  
+  .homslides figcaption p.h2 {
+    font-weight: $fw-700;
+    font-size: 2rem;
+  }
+  
+  
+  /* !--Basic Theme (Animation) */
+  // text
+  .homslides p {
+ //   transform: translateX(50%);
+ //   opacity: 0;
+ //   transition: all .5s 1s ease;
+  }
+  .homslides p.h2 {
+ //   transform: translateX(0) translateY(-200%);
+ //   transition-delay: .3s;
+  }
+  .homslides p:last-child {
+ //   transition-delay: .6s;
+  }
+  .homslides .homslides1_on p,
+  .homslides .homslides1_on p:last-child {
+ //   transform: translateX(0); 
+ //   opacity: 1;
+  }
+  .homslides .homslides1_on p.h2 {
+  //  transform: translateX(0) translateY(0);
+  }
+  
+  
+  @include mq(small) {
+  /* !--Basic Theme (Desktop) */
+    .homslides figure {
+      position: relative;
+    }
+    .homslides figcaption {
+      position: absolute;
+      /* IE 11 */ top: 0; right: 0; bottom: 0; left: 0; 
+      inset: 0;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: left;
+
+      background-color: rgba(51,51,51,0.6);
+      
+      isolation: isolate;
+    }
+    .homslides figcaption p {
+      text-shadow: 0px 0px 5px $brand-secondary, 0px 0px 10px $brand-secondary, 0px 0px 15px $brand-secondary;
+      > .btn {
+        text-shadow:none;
+      }
+    }
+  }

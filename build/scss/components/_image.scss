@@ -1,5 +1,9 @@
 @use "../abstracts" as *;
 
+.img-circle {
+    border-radius: 50%;
+}
+
 .pull-left {
     max-width: 25%;
     height: auto;

@@ -1,0 +1,57 @@
+@use "../abstracts" as *;
+
+.ccm-page {
+
+	ul.list-group,
+	ul.list-group ul {
+		list-style: none;
+		padding-inline: 0;
+		margin-inline: 0;
+	}
+	
+	.list-group {
+		border-top: dashed 1px $gray-lighter;
+	}
+	.list-group > li {
+		border-bottom: dashed 1px $gray-lighter;
+	}
+	.list-group .list-group,
+	.list-group ul {
+		font-size: 90%;
+	}
+	
+
+	
+	.list-header > a,
+	.list-header span {
+		background: $gray;
+		color: #FFF;
+		transition: all .3s;
+		font-weight: 700;
+	}
+	
+	.list-header:hover > a {
+			background: $gray-darker;
+			color: $brand-primary;
+		}
+	
+	.list-group.list-toggle,
+	.list-group.list-toggle > li {
+		border: none;
+	}
+	.list-group.list-toggle li.list-header {
+		border-bottom: solid 3px #fff;
+	}
+	.list-group.list-toggle a {
+		display: block;
+		padding: .3rem .5rem;
+	}
+	.list-group.list-toggle a:hover {
+		box-shadow: none;
+	}
+	
+	.list-group.list-toggle ul li {
+		border-bottom: dashed 1px $gray;
+	}
+	
+}

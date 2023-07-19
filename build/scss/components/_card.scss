@@ -15,9 +15,21 @@
     transition: all 0.5s ease-in-out;
 	
 	border-bottom-right-radius: 1rem;
+
+	.card-content {
+		padding-top: .5rem;
+
+		> p.h4 {
+			transition: all .3s;
+		}
+	}
 	
 	&:hover {
 		box-shadow: 0 14px 28px rgba(0,0,0,0.08),0 10px 10px rgba(0,0,0,0.04);
+
+		> .card-content > p.h4 {
+			transform: translatey(-5px);
+		}
 	}
 	
 	
